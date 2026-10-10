@@ -47,11 +47,16 @@
   --container-max:   1280px;
   --nav-height:      72px;
 
-  /* ── Responsive Breakpoints ── */
-  --bp-sm:   480px;
-  --bp-md:   768px;
-  --bp-lg:   1080px;
-  --bp-xl:   1440px;
+  /* ── Responsive Breakpoints ──
+     Reference only: CSS variables can't be used inside @media,
+     so media queries hard-code these values. Styles are desktop-first.
+       PC:     1024px and up   (base styles, no media query)
+       Tablet: 768px–1023px    @media (max-width: 1023px)
+       Phone:  767px and down  @media (max-width: 767px)
+               small phones    @media (max-width: 480px) */
+  --bp-phone-sm: 480px;
+  --bp-tablet:   768px;
+  --bp-pc:       1024px;
 
   /* ── Motion ── */
   --ease-soft:          cubic-bezier(0.25, 0.1, 0.25, 1);

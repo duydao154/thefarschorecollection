@@ -20,7 +20,8 @@ section {
   color: var(--color-charcoal);
 }
 
-@media (max-width: 768px) {
+/* Phone: ≤767px */
+@media (max-width: 767px) {
   .container {
     padding-inline: var(--space-6);
   }

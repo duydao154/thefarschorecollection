@@ -112,7 +112,7 @@
   position: fixed;
   inset: 0;
   background: var(--color-sand);
-  z-index: 99;
+  z-index: 101; /* above .site-nav (100) so the close button is clickable */
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -198,7 +198,15 @@ body:has(.site-nav__overlay.is-open) .site-nav__hamburger {
   opacity: 0.5;
 }
 
-@media (max-width: 768px) {
+/* Tablet: 768px–1023px */
+@media (max-width: 1023px) {
+  .site-nav__links {
+    gap: var(--space-6);
+  }
+}
+
+/* Phone: ≤767px */
+@media (max-width: 767px) {
   .site-nav__links {
     display: none;
   }

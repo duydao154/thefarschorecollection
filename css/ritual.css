@@ -19,7 +19,6 @@
 .ritual__image-wrap {
   position: relative;
   aspect-ratio: 4 / 5;
-  overflow: hidden;
 }
 
 .ritual__image-base,
@@ -34,8 +33,9 @@
 .ritual__image-lid {
   opacity: 0;
   transform: translateY(-20px);
-  transition: opacity var(--duration-slow) var(--ease-out),
-              transform var(--duration-slow) var(--ease-out);
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
 }
 
 /* Text side */
@@ -76,20 +76,37 @@
   margin-block: var(--space-2);
 }
 
-@media (max-width: 768px) {
+/* Tablet: 768px–1023px */
+@media (max-width: 1023px) {
+  .ritual__inner {
+    gap: var(--space-8);
+  }
+}
+
+/* Phone: ≤767px */
+@media (max-width: 767px) {
+  /* Unwrap .ritual__text so its children and the image share one column,
+     then reorder: label → image → divider → heading → body */
   .ritual__inner {
     grid-template-columns: 1fr;
-    gap: var(--space-12);
-  }
-
-  .ritual__image-wrap {
-    max-width: 480px;
-    margin-inline: auto;
+    gap: var(--space-6);
+    justify-items: center;
+    text-align: center;
   }
 
   .ritual__text {
-    text-align: center;
-    align-items: center;
+    display: contents;
+  }
+
+  .ritual__label   { order: 1; }
+  .ritual__divider { order: 3; }
+  .ritual__heading { order: 4; }
+  .ritual__body    { order: 5; }
+
+  .ritual__image-wrap {
+    order: 2;
+    width: 100%; /* children are absolute, so without a width it collapses to 0 */
+    max-width: 480px;
   }
 
   .ritual__body {
