@@ -20,11 +20,29 @@ const translations = {
     "hero.mute.aria": "Ton einschalten",
     "hero.mute.aria.on": "Ton ausschalten",
 
-    // Ritual
-    "ritual.label": "Das Streben nach Reinheit",
-    "ritual.heading": "<br>Kein Bambus.",
-    "ritual.body":
-      "Keine synthetischen Klebstoffe. Nur gepresste natürliche Holzpulver, Pflanzenharze und reine ätherische Öle – für einen federleichten, sauber brennenden Rauch.",
+    // Ritual carousel
+    "ritual.slide1.label": "Das Streben nach Reinheit",
+    "ritual.slide1.heading": "Kernlos.<br>Botanisch.",
+    "ritual.slide1.body":
+      "Ohne Bambuskern. Nur gepresste Holzpulver, Pflanzenharze und reine ätherische Öle.",
+    "ritual.slide2.label": "Die Kunst der Geduld",
+    "ritual.slide2.alt":
+      "Hunderte von Hand gefertigte Räucherstäbchen trocknen auf Holzgestellen in einem Werkstatthof",
+    "ritual.slide2.heading": "Von Hand gefertigt.<br>Mit Zeit gereift.",
+    "ritual.slide2.body":
+      "Geboren aus jahrhundertealter Handwerkskunst in einem kleinen Küstendorf in Ostasien.",
+    "ritual.slide3.label": "Der stille Moment",
+    "ritual.slide3.alt":
+      "Ein glimmendes Räucherstäbchen auf einer gesprenkelten Keramikschale, ein feiner Rauchfaden steigt auf",
+    "ritual.slide3.heading": "Ein Faden Rauch.<br>Eine halbe Stunde.",
+    "ritual.slide3.body":
+      "Fein, hell, ruhig. Gut dreißig Minuten, die nur dir gehören, bis nichts bleibt als eine Linie Asche.",
+    "ritual.slide4.label": "Der Weg zur Küste",
+    "ritual.slide4.alt":
+      "Vier Momente mit Far Shore: am Schreibtisch, auf dem Sofa mit einem Buch, bei einer Tasse Tee mit Estuary und neben einer Yogamatte mit Mist",
+    "ritual.slide4.heading": "Vier Landschaften.<br>Vier Momente.",
+    "ritual.slide4.body":
+      "Wähle nach dem Moment: The Mist für die Morgenrituale, The Driftwood für tiefen Fokus, The Estuary für das bewusste Abschalten, The Dune für lange Abende.",
 
     // Collection
     "collection.heading": "Die Kollektion",
@@ -51,7 +69,7 @@ const translations = {
     "journal.read_more": "Weiterlesen &rarr;",
 
     // Contact
-    "contact.headline": "Erreiche das Ufer.",
+    "contact.headline": "Erreiche die Küste.",
     "contact.poetry": "Wir lesen jede Nachricht. Wir antworten mit Sorgfalt.",
     "contact.name.placeholder": "Dein Name",
     "contact.email.placeholder": "E-Mail-Adresse",
@@ -99,11 +117,29 @@ const translations = {
     "hero.mute.aria": "Unmute video",
     "hero.mute.aria.on": "Mute video",
 
-    // Ritual
-    "ritual.label": "The Pursuit of Purity",
-    "ritual.heading": "100% Coreless.<br>Zero Bamboo.",
-    "ritual.body":
-      "No synthetic glues. Just compressed natural wood powders, plant resins, and pure essential oils for a whisper-light, clean-burning smoke.",
+    // Ritual carousel
+    "ritual.slide1.label": "The Pursuit of Purity",
+    "ritual.slide1.heading": "Coreless.<br>Botanical.",
+    "ritual.slide1.body":
+      "No bamboo core. Just pressed wood powders, plant resins and pure essential oils.",
+    "ritual.slide2.label": "The Art of Patience",
+    "ritual.slide2.alt":
+      "Hundreds of handmade incense sticks drying on wooden racks in a workshop courtyard",
+    "ritual.slide2.heading": "Made by hand.<br>Matured with time.",
+    "ritual.slide2.body":
+      "Born of centuries-old craftsmanship in a small coastal village in East Asia.",
+    "ritual.slide3.label": "The Quiet Moment",
+    "ritual.slide3.alt":
+      "A smouldering incense stick resting on a speckled ceramic dish, a fine thread of smoke rising",
+    "ritual.slide3.heading": "A thread of smoke.<br>Half an hour.",
+    "ritual.slide3.body":
+      "Fine, bright, calm. A good thirty minutes that belong only to you, until nothing remains but a line of ash.",
+    "ritual.slide4.label": "The Way to the Shore",
+    "ritual.slide4.alt":
+      "Four moments with Far Shore: at a desk, on the sofa with a book, with a cup of tea and Estuary, and beside a yoga mat with Mist",
+    "ritual.slide4.heading": "Four landscapes.<br>Four moments.",
+    "ritual.slide4.body":
+      "Choose by the moment: The Mist for morning rituals, The Driftwood for deep focus, The Estuary for mindful unwinding, The Dune for long evenings.",
 
     // Collection
     "collection.heading": "The Collection",
@@ -182,6 +218,11 @@ function setLang(lang) {
   document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
     const val = t[el.dataset.i18nPlaceholder];
     if (val !== undefined) el.placeholder = val;
+  });
+
+  document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
+    const val = t[el.dataset.i18nAlt];
+    if (val !== undefined) el.alt = val;
   });
 
   document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
