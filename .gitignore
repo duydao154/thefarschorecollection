@@ -6,3 +6,6 @@ _source-assets/
 Thumbs.db
 desktop.ini
 .vscode/
+
+# Local secrets
+.env
