@@ -453,6 +453,14 @@
       min-height: 1.5em;
     }
 
+    .cocreation__error {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      color: #A0785A;
+      letter-spacing: 0.02em;
+      min-height: 1.4em;
+    }
+
     .cocreation__success.is-visible {
       opacity: 1;
       transform: translateY(0);
@@ -673,7 +681,8 @@
           type="url"
           id="track-input"
           name="track"
-          placeholder="Paste a Spotify link or track name here..."
+          placeholder="Paste a Spotify link here..."
+          aria-describedby="track-error"
           autocomplete="off"
           autocorrect="off"
           autocapitalize="off"
@@ -683,8 +692,9 @@
       <button class="cocreation__submit" type="button" id="submit-btn">
         Submit
       </button>
+      <p class="cocreation__error" id="track-error" role="alert"></p>
       <p class="cocreation__success" id="success-msg" role="status" aria-live="polite">
-        Thank you. Your contribution has been added to the Shoreline.
+        Thank you. Your contribution is on its way to the Shoreline.
       </p>
     </div>
   </section>
@@ -698,7 +708,9 @@
     </a>
   </footer>
 
-  <script>
+  <script type="module">
+    import { sendForm } from '/js/form-service.js';
+
     /* ── Scroll Reveal ────────────────────────────────────── */
     (function () {
       var observer = new IntersectionObserver(function (entries) {
@@ -716,18 +728,106 @@
     })();
 
     /* ── Contribution Form ────────────────────────────────── */
+    /* Checks the Spotify link, then emails it to the concierge address
+       via js/form-service.js (same inbox as the contact section). */
     (function () {
+      var CONTACT_EMAIL = 'concierge@thefarshorecollection.com';
+
       var btn     = document.getElementById('submit-btn');
       var input   = document.getElementById('track-input');
       var success = document.getElementById('success-msg');
+      var error   = document.getElementById('track-error');
+      var btnText = btn.textContent.trim();
 
-      btn.addEventListener('click', function () {
-        var val = input.value.trim();
-        if (!val) {
-          input.focus();
-          return;
+      /* Returns { url, type, verifiable } for a well-formed Spotify link, or null.
+         Accepts open.spotify.com links (incl. /intl-de/ and /embed/),
+         spotify:track:… URIs, and spotify.link / spoti.fi short links. */
+      function parseSpotifyLink(value) {
+        var TYPES = 'track|album|playlist|artist|episode|show';
+        var ID = '[A-Za-z0-9]{22}';
+
+        var uri = value.match(new RegExp('^spotify:(' + TYPES + '):(' + ID + ')$'));
+        if (uri) {
+          return { url: 'https://open.spotify.com/' + uri[1] + '/' + uri[2], type: uri[1], verifiable: true };
         }
-        /* Clear and show success */
+
+        if (!/^https?:\/\//i.test(value)) value = 'https://' + value;
+        var link;
+        try { link = new URL(value); } catch (e) { return null; }
+
+        var host = link.hostname.toLowerCase();
+        if (host === 'open.spotify.com' || host === 'play.spotify.com') {
+          var m = link.pathname.match(new RegExp('^/(?:intl-[a-z]{2}(?:-[a-z]{2})?/)?(?:embed/)?(' + TYPES + ')/(' + ID + ')/?$', 'i'));
+          if (!m) return null;
+          var type = m[1].toLowerCase();
+          return { url: 'https://open.spotify.com/' + type + '/' + m[2], type: type, verifiable: true };
+        }
+
+        /* Short share links redirect to Spotify and can't be looked up from the browser */
+        if ((host === 'spotify.link' || host === 'spoti.fi') && /^\/[A-Za-z0-9]+\/?$/.test(link.pathname)) {
+          return { url: link.href, type: 'link', verifiable: false };
+        }
+
+        return null;
+      }
+
+      /* Asks Spotify whether the link exists. Resolves to
+         { status: 'found', title } | { status: 'notfound' } | { status: 'unverified' }.
+         Spotify's lookup doesn't cover every user playlist, and the network can
+         fail, so those cases fall back to 'unverified' instead of rejecting. */
+      function verifySpotifyLink(parsed) {
+        if (!parsed.verifiable) return Promise.resolve({ status: 'unverified' });
+
+        var controller = window.AbortController ? new AbortController() : null;
+        var timer = controller && setTimeout(function () { controller.abort(); }, 6000);
+
+        return fetch('https://open.spotify.com/oembed?url=' + encodeURIComponent(parsed.url),
+                     controller ? { signal: controller.signal } : {})
+          .then(function (res) {
+            if (res.ok) {
+              return res.json().then(function (data) {
+                return { status: 'found', title: data.title || '' };
+              });
+            }
+            if (res.status === 404 && parsed.type !== 'playlist') return { status: 'notfound' };
+            return { status: 'unverified' };
+          })
+          .catch(function () { return { status: 'unverified' }; })
+          .then(function (result) {
+            if (timer) clearTimeout(timer);
+            return result;
+          });
+      }
+
+      function showError(message) {
+        error.textContent = message;
+        input.setAttribute('aria-invalid', 'true');
+        input.focus();
+      }
+
+      function clearError() {
+        error.textContent = '';
+        input.removeAttribute('aria-invalid');
+      }
+
+      function setBusy(busy) {
+        btn.disabled = busy;
+        input.disabled = busy;
+        btn.textContent = busy ? 'Checking…' : btnText;
+      }
+
+      function sendTrack(parsed, result) {
+        return sendForm({
+          'Spotify link': parsed.url,
+          'Title': result.title || '(unknown)',
+          'Verified on Spotify': result.status === 'found' ? 'Yes' : 'No (playlist or short link)',
+          'Page': 'Soundscape · Shape the Shoreline',
+        }, {
+          subject: 'Shoreline track suggestion' + (result.title ? ': ' + result.title : ''),
+        });
+      }
+
+      function showSuccess() {
         input.value = '';
         input.disabled = true;
         btn.disabled   = true;
@@ -743,7 +843,42 @@
             btn.style.opacity = '';
           }, 1400);
         }, 5000);
+      }
+
+      btn.addEventListener('click', function () {
+        var val = input.value.trim();
+        clearError();
+        if (!val) {
+          input.focus();
+          return;
+        }
+
+        var parsed = parseSpotifyLink(val);
+        if (!parsed) {
+          showError('That doesn\'t look like a Spotify link. In Spotify, use Share → Copy link and paste it here.');
+          return;
+        }
+
+        setBusy(true);
+        verifySpotifyLink(parsed).then(function (result) {
+          if (result.status === 'notfound') {
+            setBusy(false);
+            showError('We couldn\'t find that on Spotify. Please check the link and try again.');
+            return;
+          }
+          btn.textContent = 'Sending…';
+          return sendTrack(parsed, result).then(function () {
+            setBusy(false);
+            showSuccess();
+          });
+        }).catch(function (err) {
+          console.error('Contribution form:', err);
+          setBusy(false);
+          showError('Something went wrong sending your track. Please try again, or email it to ' + CONTACT_EMAIL + '.');
+        });
       });
+
+      input.addEventListener('input', clearError);
 
       /* Allow Enter key */
       input.addEventListener('keydown', function (e) {
