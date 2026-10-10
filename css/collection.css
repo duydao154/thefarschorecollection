@@ -95,7 +95,15 @@
   border-color: var(--color-charcoal);
 }
 
-@media (max-width: 768px) {
+/* Tablet: 768px–1023px */
+@media (max-width: 1023px) {
+  .collection__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Phone: ≤767px */
+@media (max-width: 767px) {
   .collection__grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-4);

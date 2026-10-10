@@ -207,7 +207,8 @@
 /* Honeypot */
 .contact__hp { display: none; }
 
-@media (max-width: 768px) {
+/* Phone: ≤767px */
+@media (max-width: 767px) {
   .contact__form {
     max-width: 100%;
   }

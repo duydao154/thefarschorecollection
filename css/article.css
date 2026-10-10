@@ -383,7 +383,8 @@
   color: var(--color-charcoal);
 }
 
-@media (max-width: 768px) {
+/* Phone: ≤767px */
+@media (max-width: 767px) {
   .article-hero__title {
     font-size: var(--text-lg);
   }
