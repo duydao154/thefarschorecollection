@@ -1,0 +1,63 @@
+/* tokens.css — Far Shore Design Tokens */
+:root {
+  /* ── Core Colors ── */
+  --color-sand:       #ECEAE4;
+  --color-charcoal:   #2E2E2E;
+  --color-sand-text:  #ECEAE4;
+
+  /* ── Accent Colors ── */
+  --color-teal:       #5B8C8A;
+  --color-earth:      #A0785A;
+  --color-gold:       #C9A96E;
+  --color-eggshell:   #F5F0E6;
+
+  /* ── Hero palette ── */
+  --color-hero-warm:  #FDEAD6;
+
+  /* ── Typography ── */
+  --font-heading:  'Playfair Display', 'Georgia', serif;
+  --font-poetry:   'Cormorant Garamond', 'Georgia', serif;
+  --font-body:     'Lora', 'Georgia', serif;
+
+  /* ── Type Scale ── */
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-md:   1.25rem;
+  --text-lg:   1.75rem;
+  --text-xl:   2.5rem;
+  --text-2xl:  4rem;
+  --text-3xl:  6rem;
+
+  --leading-tight:  1.1;
+  --leading-normal: 1.6;
+  --leading-loose:  1.9;
+
+  /* ── Spacing ── */
+  --space-2:   0.5rem;
+  --space-4:   1rem;
+  --space-6:   1.5rem;
+  --space-8:   2rem;
+  --space-12:  3rem;
+  --space-16:  4rem;
+  --space-24:  6rem;
+  --space-32:  8rem;
+
+  /* ── Layout ── */
+  --container-max:   1280px;
+  --nav-height:      72px;
+
+  /* ── Responsive Breakpoints ── */
+  --bp-sm:   480px;
+  --bp-md:   768px;
+  --bp-lg:   1080px;
+  --bp-xl:   1440px;
+
+  /* ── Motion ── */
+  --ease-soft:          cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-out:           cubic-bezier(0, 0, 0.2, 1);
+  --duration-fast:      200ms;
+  --duration-base:      500ms;
+  --duration-slow:      900ms;
+  --duration-cinematic: 1400ms;
+}

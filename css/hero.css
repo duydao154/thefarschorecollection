@@ -1,0 +1,272 @@
+/* hero.css — Far Shore */
+
+.hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 56vh;
+  max-height: 100vh;
+  overflow: hidden;
+  background: #1a1610;
+}
+
+/* Fallback gradient — behind the video */
+.hero__video-fallback {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    var(--color-hero-warm) 0%,
+    #D4A97C 40%,
+    #8B6E5A 100%
+  );
+  z-index: 0;
+}
+
+/* Video above fallback */
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Bottom gradient — makes text readable over video */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 30%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ── Text content — bottom center ── */
+.hero__content {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2);
+  padding-inline: var(--space-8);
+  /* Full-width box (needed to center text) would otherwise sit on top of
+     the hero__controls buttons and steal their clicks — only the actual
+     link inside should be clickable. */
+  pointer-events: none;
+}
+
+.hero__headline {
+  font-family: var(--font-heading);
+  font-size: 31px;
+  font-weight: 500;
+  color: #fff;
+  line-height: var(--leading-tight);
+  letter-spacing: 0.02em;
+}
+
+.hero__poetry {
+  font-family: var(--font-poetry);
+  font-style: italic;
+  font-size: 25px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: var(--leading-loose);
+  max-width: 800px;
+  white-space: nowrap;
+}
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-8);
+  min-height: 44px;
+  background: transparent;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 0;
+  transition: background var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out);
+}
+
+.hero__cta::after {
+  content: '→';
+  font-size: var(--text-sm);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.hero__cta:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.hero__cta:hover::after {
+  transform: translateX(4px);
+}
+
+/* Scroll-down arrow inside hero content */
+.hero__scroll-down {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  animation: scrollBounce 2.4s var(--ease-soft) infinite;
+  transition: color var(--duration-fast) var(--ease-out);
+  pointer-events: auto;
+}
+
+.hero__scroll-down svg {
+  width: 16px;
+  height: 16px;
+}
+
+.hero__scroll-down:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ── Video controls — bottom left ── */
+.hero__controls {
+  position: absolute;
+  bottom: var(--space-6);
+  left: var(--space-8);
+  z-index: 3;
+  display: flex;
+  gap: var(--space-4);
+}
+
+.hero__ctrl-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out),
+              transform var(--duration-fast) var(--ease-out);
+  flex-shrink: 0;
+}
+
+.hero__ctrl-btn:hover {
+  background: rgba(0, 0, 0, 0.65);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.hero__ctrl-btn:active {
+  transform: scale(0.92);
+}
+
+.hero__ctrl-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+/* Play button: video autoplays → show pause icon by default */
+#heroPlay .hero__ctrl-icon--play   { display: none; }
+#heroPlay .hero__ctrl-icon--pause  { display: block; }
+
+#heroPlay.is-paused .hero__ctrl-icon--play  { display: block; }
+#heroPlay.is-paused .hero__ctrl-icon--pause { display: none; }
+
+/* Mute button: video starts muted → show muted (X) icon by default */
+#heroMute .hero__ctrl-icon--muted   { display: block; }
+#heroMute .hero__ctrl-icon--unmuted { display: none; }
+
+#heroMute.is-unmuted .hero__ctrl-icon--muted   { display: none; }
+#heroMute.is-unmuted .hero__ctrl-icon--unmuted { display: block; }
+
+/* ── Scroll hint — bottom right ── */
+.hero__scroll-hint {
+  position: absolute;
+  bottom: var(--space-6);
+  right: var(--space-8);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.5);
+  animation: scrollBounce 2.4s var(--ease-soft) infinite;
+  cursor: pointer;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.hero__scroll-hint:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero__scroll-hint svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+  display: block;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0);   opacity: 0.4; }
+  50%       { transform: translateY(6px); opacity: 0.8; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hero {
+    aspect-ratio: unset;
+    height: 80vh;
+    min-height: 480px;
+    max-height: none;
+  }
+
+  .hero__headline {
+    font-size: var(--text-xl);
+  }
+
+  .hero__poetry {
+    font-size: var(--text-base);
+  }
+
+  .hero__content {
+    bottom: var(--space-12);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 75vh;
+    min-height: 400px;
+  }
+
+  .hero__headline {
+    font-size: var(--text-lg);
+  }
+
+  .hero__content {
+    padding-inline: var(--space-4);
+    gap: var(--space-4);
+    bottom: var(--space-16);
+  }
+}

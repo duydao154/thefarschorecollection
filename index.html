@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Far Shore — Erstklassiges kernloses Naturräucherwerk. Eine 30-minütige Auszeit für den Geist.">
+  <title>Far Shore — Luxus Naturräucherwerk</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/logo/logo_symbol.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/typography.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="/css/nav.css?v=4">
+  <link rel="stylesheet" href="/css/hero.css">
+  <link rel="stylesheet" href="/css/ritual.css">
+  <link rel="stylesheet" href="/css/collection.css">
+  <link rel="stylesheet" href="/css/journal.css">
+  <link rel="stylesheet" href="/css/contact.css">
+  <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+
+  <!-- ─────────────────────────────────────────
+       NAV
+  ───────────────────────────────────────── -->
+  <nav class="site-nav" role="navigation" data-i18n-aria="nav.shop" aria-label="Hauptnavigation">
+    <div class="site-nav__inner">
+      <a href="/" class="site-nav__wordmark" aria-label="Far Shore home">
+        <img src="/images/logo/logo_horizontal.png" alt="Far Shore" class="site-nav__logo">
+      </a>
+
+      <ul class="site-nav__links" role="list">
+        <li><a class="site-nav__link" data-scroll-to="collection" data-i18n="nav.shop">Shop</a></li>
+        <li><a class="site-nav__link" data-scroll-to="journal" data-i18n="nav.journal">Journal</a></li>
+        <li><a class="site-nav__link" data-scroll-to="ritual" data-i18n="nav.story">Unsere Geschichte</a></li>
+        <li><a class="site-nav__link" data-scroll-to="contact" data-i18n="nav.contact">Kontakt</a></li>
+        <li><button class="lang-toggle" id="langToggle">EN</button></li>
+      </ul>
+
+      <button class="site-nav__hamburger" data-i18n-aria="nav.open" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile overlay menu -->
+  <div class="site-nav__overlay" role="dialog" aria-modal="true" aria-label="Navigationsmenü">
+    <button class="site-nav__overlay-close" data-i18n-aria="nav.close" aria-label="Menü schließen">&times;</button>
+    <nav>
+      <a href="#collection" class="site-nav__overlay-link" data-i18n="nav.shop">Shop</a>
+      <a href="#journal" class="site-nav__overlay-link" data-i18n="nav.journal">Journal</a>
+      <a href="#ritual" class="site-nav__overlay-link" data-i18n="nav.story">Unsere Geschichte</a>
+      <a href="#contact" class="site-nav__overlay-link" data-i18n="nav.contact">Kontakt</a>
+    </nav>
+    <button class="lang-toggle lang-toggle--overlay" id="langToggleOverlay">EN</button>
+  </div>
+
+
+  <!-- ─────────────────────────────────────────
+       HERO
+  ───────────────────────────────────────── -->
+  <section class="hero" aria-label="Hero">
+
+    <video
+      class="hero__video"
+      autoplay
+      muted
+      playsinline
+      aria-hidden="true"
+    >
+      <source src="/video/home.mp4" type="video/mp4">
+    </video>
+
+    <!-- Fallback gradient shown when no video -->
+    <div class="hero__video-fallback" aria-hidden="true"></div>
+
+    <!-- Video controls — bottom left -->
+    <div class="hero__controls">
+      <button class="hero__ctrl-btn" id="heroPlay" data-i18n-aria="hero.play.aria" aria-label="Video pausieren">
+        <!-- Play icon (shown when paused) -->
+        <svg class="hero__ctrl-icon hero__ctrl-icon--play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <polygon points="6,4 20,12 6,20"/>
+        </svg>
+        <!-- Pause icon (shown when playing) -->
+        <svg class="hero__ctrl-icon hero__ctrl-icon--pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <rect x="5" y="4" width="4" height="16"/><rect x="15" y="4" width="4" height="16"/>
+        </svg>
+      </button>
+      <button class="hero__ctrl-btn" id="heroMute" data-i18n-aria="hero.mute.aria" aria-label="Ton einschalten">
+        <!-- Muted icon (shown when muted) -->
+        <svg class="hero__ctrl-icon hero__ctrl-icon--muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <polygon points="11,5 6,9 2,9 2,15 6,15 11,19" fill="currentColor" stroke="none"/>
+          <line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>
+        </svg>
+        <!-- Unmuted icon (shown when sound is on) -->
+        <svg class="hero__ctrl-icon hero__ctrl-icon--unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <polygon points="11,5 6,9 2,9 2,15 6,15 11,19" fill="currentColor" stroke="none"/>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Text content — bottom of video -->
+    <div class="hero__content">
+      <h1 class="hero__headline" data-i18n="hero.headline">Du bist angekommen.</h1>
+      <p class="hero__poetry" data-i18n="hero.poetry">
+        Kein Ort auf einer Karte – nur der stille Rand des Tages.
+      </p>
+      <a href="#collection" class="hero__scroll-down" data-i18n-aria="hero.scroll.aria" aria-label="Zur Kollektion scrollen">
+        <span data-i18n="hero.scroll">Entdecken</span>
+        <svg viewBox="0 0 16 24" stroke-width="1.5" fill="none" stroke="currentColor" aria-hidden="true">
+          <polyline points="4,10 8,16 12,10"/>
+        </svg>
+      </a>
+    </div>
+
+  </section>
+
+
+  <!-- ─────────────────────────────────────────
+       THE RITUAL
+  ───────────────────────────────────────── -->
+  <section class="ritual" id="ritual" aria-label="Das Ritual">
+    <div class="ritual__inner">
+
+      <!-- Left: parallax image -->
+      <div class="ritual__image-wrap reveal reveal--left">
+        <img class="ritual__image-base" src="/images/home/ritual-box.jpg" alt="Far Shore ingredient transparency">
+      </div>
+
+      <!-- Right: text -->
+      <div class="ritual__text reveal reveal--right">
+        <span class="ritual__label" data-i18n="ritual.label">Das Streben nach Reinheit</span>
+        <div class="ritual__divider" aria-hidden="true"></div>
+        <h2 class="ritual__heading" data-i18n="ritual.heading">100% Kernlos.<br>Kein Bambus.</h2>
+        <p class="ritual__body" data-i18n="ritual.body">
+          Keine synthetischen Klebstoffe. Nur gepresste natürliche Holzpulver,
+          Pflanzenharze und reine ätherische Öle – für einen federleichten,
+          sauber brennenden Rauch.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ─────────────────────────────────────────
+       THE COLLECTION
+  ───────────────────────────────────────── -->
+  <section class="collection" id="collection" aria-label="Die Kollektion">
+    <div class="collection__inner">
+      <h2 class="section-heading reveal" data-i18n="collection.heading">Die Kollektion</h2>
+
+      <div class="collection__grid stagger">
+
+        <!-- Dune -->
+        <article class="product-card reveal">
+          <div class="product-card__image-wrap">
+            <img src="/images/products/dune.jpg" alt="Dune">
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Dune</h3>
+            <p class="product-card__notes" data-i18n="product.dune.notes">Sandelholz, Agarholz &amp; Rose</p>
+            <a class="product-card__cta" href="https://www.amazon.de/dp/B0HKR51VRP" target="_blank" rel="noopener noreferrer" data-i18n="product.add_to_cart">Bei Amazon ansehen</a>
+          </div>
+        </article>
+
+        <!-- Driftwood -->
+        <article class="product-card reveal">
+          <div class="product-card__image-wrap">
+            <img src="/images/products/driftwood.jpg" alt="Driftwood">
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Driftwood</h3>
+            <p class="product-card__notes" data-i18n="product.driftwood.notes">Zeder &amp; Vetiver</p>
+            <a class="product-card__cta" href="https://www.amazon.de/dp/B0HK24SSRL" target="_blank" rel="noopener noreferrer" data-i18n="product.add_to_cart">Bei Amazon ansehen</a>
+          </div>
+        </article>
+
+        <!-- Estuary -->
+        <article class="product-card reveal">
+          <div class="product-card__image-wrap">
+            <img src="/images/products/estuary.jpg" alt="Estuary">
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Estuary</h3>
+            <p class="product-card__notes" data-i18n="product.estuary.notes">Kamille, Lavendel &amp; Vetiver</p>
+            <!-- TODO: replace with the Estuary product listing once live -->
+            <a class="product-card__cta" href="https://www.amazon.de" target="_blank" rel="noopener noreferrer" data-i18n="product.add_to_cart">Bei Amazon ansehen</a>
+          </div>
+        </article>
+
+        <!-- Mist -->
+        <article class="product-card reveal">
+          <div class="product-card__image-wrap">
+            <img src="/images/products/mist.jpg" alt="Mist">
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Mist</h3>
+            <p class="product-card__notes" data-i18n="product.mist.notes">Wermut, Bergamotte &amp; Sandelholz</p>
+            <a class="product-card__cta" href="https://www.amazon.de/dp/B0HKRL8SJ6" target="_blank" rel="noopener noreferrer" data-i18n="product.add_to_cart">Bei Amazon ansehen</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─────────────────────────────────────────
+       THE JOURNAL
+  ───────────────────────────────────────── -->
+  <section class="journal" id="journal" aria-label="Journal">
+    <div class="journal__inner">
+      <h2 class="section-heading reveal" data-i18n="journal.heading">Notizen von der Küste</h2>
+
+      <div class="journal__grid stagger">
+
+        <!-- Card 1 — Brand story -->
+        <article class="journal-card reveal">
+          <div class="journal-card__image-wrap">
+            <img src="/images/journal/die-ferne-kueste/hero.jpg" alt="Die ferne Küste">
+          </div>
+          <div class="journal-card__body">
+            <h3 class="journal-card__title" data-i18n="journal.card1.title">Die ferne Küste: Die Geschichte hinter Far Shore</h3>
+            <p class="journal-card__excerpt" data-i18n="journal.card1.excerpt">
+              Ein verbannter Dichter, eine Insel am Rand der Welt und der Rauch, der ihn heimbrachte...
+            </p>
+            <a href="/journal/die-ferne-kueste/" class="journal-card__read-more" data-i18n="journal.read_more">Weiterlesen &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Card 2 — Value proposition -->
+        <article class="journal-card reveal">
+          <div class="journal-card__image-wrap">
+            <img src="/images/journal/kernloses-raeucherwerk/inline-1.jpg" alt="Kernlos. Botanisch.">
+          </div>
+          <div class="journal-card__body">
+            <h3 class="journal-card__title" data-i18n="journal.card2.title">Kernlos. Botanisch.</h3>
+            <p class="journal-card__excerpt" data-i18n="journal.card2.excerpt">
+              Was in einem Far Shore Räucherstäbchen steckt – und was nicht. Kein Bambus, kein DPG, keine synthetischen Duftöle...
+            </p>
+            <a href="/journal/kernloses-raeucherwerk/" class="journal-card__read-more" data-i18n="journal.read_more">Weiterlesen &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Card 3 — Heritage & craftsmanship -->
+        <article class="journal-card reveal">
+          <div class="journal-card__image-wrap">
+            <img src="/images/journal/handwerk-raeucherwerk/hero.jpg" alt="Handwerk">
+          </div>
+          <div class="journal-card__body">
+            <h3 class="journal-card__title" data-i18n="journal.card3.title">Die Kunst des langsamen Räucherwerks</h3>
+            <p class="journal-card__excerpt" data-i18n="journal.card3.excerpt">
+              Gepresst, von Hand in ätherische Öle getaucht und langsam an der Luft gereift. So entsteht ein Far Shore Stäbchen...
+            </p>
+            <a href="/journal/handwerk-raeucherwerk/" class="journal-card__read-more" data-i18n="journal.read_more">Weiterlesen &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Card 4 — The ritual -->
+        <article class="journal-card reveal">
+          <div class="journal-card__image-wrap">
+            <img src="/images/journal/far-shore-ritual/hero.jpg" alt="Das Far Shore Ritual">
+          </div>
+          <div class="journal-card__body">
+            <h3 class="journal-card__title" data-i18n="journal.card4.title">Das Far Shore Ritual</h3>
+            <p class="journal-card__excerpt" data-i18n="journal.card4.excerpt">
+              Eine Landschaft wählen, sie bewahren, sie entzünden. Vier Schritte zu einem 30-minütigen Ritual...
+            </p>
+            <a href="/journal/far-shore-ritual/" class="journal-card__read-more" data-i18n="journal.read_more">Weiterlesen &rarr;</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─────────────────────────────────────────
+       CONTACT
+  ───────────────────────────────────────── -->
+  <section class="contact" id="contact" aria-label="Kontakt">
+    <div class="contact__inner">
+
+      <img src="/images/logo/logo_vertical.png" alt="Far Shore" class="contact__logo">
+
+      <h2 class="contact__headline reveal" data-i18n="contact.headline">Erreiche das Ufer.</h2>
+      <p class="contact__poetry reveal" data-i18n="contact.poetry">Wir lesen jede Nachricht. Wir antworten mit Sorgfalt.</p>
+
+      <div class="contact__divider" aria-hidden="true"></div>
+
+      <form class="contact__form" id="contactForm" novalidate>
+
+        <div class="contact__hp" aria-hidden="true">
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="contact__row">
+          <div class="contact__field">
+            <input type="text" name="name"
+              data-i18n-placeholder="contact.name.placeholder"
+              placeholder="Dein Name" required autocomplete="name">
+          </div>
+          <div class="contact__field">
+            <input type="email" name="email"
+              data-i18n-placeholder="contact.email.placeholder"
+              placeholder="E-Mail-Adresse" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="contact__field" style="position:relative;">
+          <select name="topic" id="topicSelect" required>
+            <option value="" disabled selected data-i18n="contact.topic.default">Thema</option>
+            <option value="order" data-i18n="contact.topic.order">Bestellanfrage</option>
+            <option value="wholesale" data-i18n="contact.topic.wholesale">Großhandel &amp; Händler</option>
+            <option value="press" data-i18n="contact.topic.press">Presse &amp; Zusammenarbeit</option>
+            <option value="general" data-i18n="contact.topic.general">Allgemeines</option>
+          </select>
+          <svg class="contact__select-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+            <path d="M1 1L5 5L9 1" stroke="rgba(236,234,228,0.5)" stroke-width="1" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <div class="contact__field">
+          <textarea name="message"
+            data-i18n-placeholder="contact.msg.placeholder"
+            placeholder="Deine Nachricht" required></textarea>
+        </div>
+
+        <div class="contact__actions">
+          <span class="contact__note" data-i18n="contact.note">Wir antworten innerhalb von 2 Werktagen.</span>
+          <button type="submit" class="contact__submit" data-i18n="contact.submit">Senden</button>
+        </div>
+
+      </form>
+
+      <div class="contact__success" id="contactSuccess" aria-live="polite">
+        <div class="contact__divider" style="margin-inline:auto;"></div>
+        <p data-i18n="contact.success">Deine Nachricht ist unterwegs.<br>
+        <span style="opacity:0.5; font-size:var(--text-base);">Wir melden uns in Kürze.</span></p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <footer class="slim-footer" id="footer" role="contentinfo">
+    <div class="slim-footer__inner">
+      <a href="mailto:concierge@thefarshorecollection.com" class="slim-footer__link">concierge@thefarshorecollection.com</a>
+      <div class="slim-footer__dot" aria-hidden="true"></div>
+      <a href="https://instagram.com" target="_blank" rel="noopener" class="slim-footer__link">@farshore</a>
+      <div class="slim-footer__dot" aria-hidden="true"></div>
+      <a href="/impressum/" class="slim-footer__link">Impressum</a>
+      <div class="slim-footer__dot" aria-hidden="true"></div>
+      <a href="/datenschutz/" class="slim-footer__link">Datenschutz</a>
+    </div>
+  </footer>
+
+
+  <!-- JS -->
+  <script type="module" src="/js/i18n.js"></script>
+  <script type="module" src="/js/scrollTo.js"></script>
+  <script type="module">
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('contactSuccess');
+    const select = document.getElementById('topicSelect');
+
+    if (select) {
+      select.addEventListener('change', () => {
+        select.classList.toggle('has-value', select.value !== '');
+      });
+    }
+
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const message = form.message.value.trim();
+        if (!name || !email || !message) return;
+
+        form.style.opacity = '0';
+        form.style.transition = 'opacity 0.6s ease';
+        setTimeout(() => {
+          form.style.display = 'none';
+          success.classList.add('is-visible');
+        }, 600);
+      });
+    }
+  </script>
+  <script type="module">
+    const heroVideo = document.querySelector('.hero__video');
+    const playBtn   = document.getElementById('heroPlay');
+    const muteBtn   = document.getElementById('heroMute');
+
+    if (heroVideo) {
+      heroVideo.addEventListener('ended', () => {
+        playBtn?.classList.add('is-paused');
+        setTimeout(() => {
+          heroVideo.currentTime = 0;
+          heroVideo.play();
+          playBtn?.classList.remove('is-paused');
+        }, 10000);
+      });
+    }
+
+    if (heroVideo && playBtn && muteBtn) {
+      playBtn.addEventListener('click', () => {
+        if (heroVideo.paused) {
+          heroVideo.play();
+          playBtn.classList.remove('is-paused');
+        } else {
+          heroVideo.pause();
+          playBtn.classList.add('is-paused');
+        }
+      });
+
+      muteBtn.addEventListener('click', () => {
+        if (heroVideo.muted) {
+          heroVideo.muted = false;
+          muteBtn.classList.add('is-unmuted');
+        } else {
+          heroVideo.muted = true;
+          muteBtn.classList.remove('is-unmuted');
+        }
+      });
+    }
+  </script>
+  <script type="module" src="/js/nav.js"></script>
+  <script type="module" src="/js/parallax.js"></script>
+  <script type="module" src="/js/scroll-reveal.js"></script>
+
+</body>
+</html>
