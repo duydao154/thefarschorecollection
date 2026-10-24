@@ -39,7 +39,13 @@ h3 { font-size: var(--text-lg); }
 .text-xl  { font-size: var(--text-xl); }
 .text-2xl { font-size: var(--text-2xl); }
 
-@media (max-width: 768px) {
+/* Tablet: 768px–1023px */
+@media (max-width: 1023px) {
+  h1 { font-size: 3.25rem; }
+}
+
+/* Phone: ≤767px */
+@media (max-width: 767px) {
   h1 { font-size: var(--text-xl); }
   h2 { font-size: var(--text-lg); }
 }

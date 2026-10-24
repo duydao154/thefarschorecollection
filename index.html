@@ -7,7 +7,7 @@
       name="description"
       content="Far Shore — Erstklassiges kernloses Naturräucherwerk. Eine 30-minütige Auszeit für den Geist."
     />
-    <title>Far Shore — Luxus Naturräucherwerk</title>
+    <title>Far Shore - Premium Natural Incense</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/images/logo/logo_symbol.png" />
@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="/css/nav.css?v=4" />
     <link rel="stylesheet" href="/css/hero.css" />
     <link rel="stylesheet" href="/css/ritual.css" />
+    <link rel="stylesheet" href="/css/carousel.css" />
     <link rel="stylesheet" href="/css/collection.css" />
     <link rel="stylesheet" href="/css/journal.css" />
     <link rel="stylesheet" href="/css/contact.css" />
@@ -232,7 +233,7 @@
           Du bist angekommen.
         </h1>
         <p class="hero__poetry" data-i18n="hero.poetry">
-          Kein Ort auf einer Karte – nur der stille Rand des Tages.
+          Kein Ort auf einer Karte, sondern der stille Rand des Tages.
         </p>
         <a
           href="#collection"
@@ -258,30 +259,125 @@
        THE RITUAL
   ───────────────────────────────────────── -->
     <section class="ritual" id="ritual" aria-label="Das Ritual">
-      <div class="ritual__inner">
-        <!-- Left: parallax image -->
-        <div class="ritual__image-wrap reveal reveal--left">
-          <img
-            class="ritual__image-base"
-            src="/images/home/ritual-box.jpg"
-            alt="Far Shore ingredient transparency"
-          />
-        </div>
+      <div class="carousel" data-carousel aria-label="Das Ritual">
+        <!--
+          To add a slide: copy one <div class="carousel__slide">…</div> block below
+          and change the image, label, heading and text. Arrows and dots update automatically.
+        -->
+        <div class="carousel__track">
+          <!-- Slide 1 -->
+          <div class="carousel__slide">
+            <div class="ritual__inner">
+              <!-- Left: parallax image -->
+              <div class="ritual__image-wrap">
+                <img
+                  class="ritual__image-base"
+                  src="/images/carousel/slide-1.jpg"
+                  alt="Far Shore ingredient transparency"
+                />
+              </div>
 
-        <!-- Right: text -->
-        <div class="ritual__text reveal reveal--right">
-          <span class="ritual__label" data-i18n="ritual.label"
-            >Das Streben nach Reinheit</span
-          >
-          <div class="ritual__divider" aria-hidden="true"></div>
-          <h2 class="ritual__heading" data-i18n="ritual.heading">
-            Kernlos.<br />Kein Bambus.
-          </h2>
-          <p class="ritual__body" data-i18n="ritual.body">
-            Keine synthetischen Klebstoffe. Nur gepresste natürliche Holzpulver,
-            Pflanzenharze und reine ätherische Öle – für einen federleichten,
-            sauber brennenden Rauch.
-          </p>
+              <!-- Right: text -->
+              <div class="ritual__text reveal reveal--right">
+                <span class="ritual__label" data-i18n="ritual.slide1.label"
+                  >Das Streben nach Reinheit</span
+                >
+                <div class="ritual__divider" aria-hidden="true"></div>
+                <h5 class="ritual__heading" data-i18n="ritual.slide1.heading">
+                  Kernlos.<br />Botanisch.
+                </h5>
+                <p class="ritual__body" data-i18n="ritual.slide1.body">
+                  Ohne Bambuskern. Nur gepresste Holzpulver, Pflanzenharze und
+                  reine ätherische Öle.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel__slide">
+            <div class="ritual__inner">
+              <div class="ritual__image-wrap">
+                <img
+                  class="ritual__image-base"
+                  src="/images/carousel/slide-2.jpg"
+                  alt="Hunderte von Hand gefertigte Räucherstäbchen trocknen auf Holzgestellen in einem Werkstatthof"
+                  data-i18n-alt="ritual.slide2.alt"
+                  loading="lazy"
+                />
+              </div>
+              <div class="ritual__text reveal reveal--right">
+                <span class="ritual__label" data-i18n="ritual.slide2.label"
+                  >Die Kunst der Geduld</span
+                >
+                <div class="ritual__divider" aria-hidden="true"></div>
+                <h5 class="ritual__heading" data-i18n="ritual.slide2.heading">
+                  Von Hand gefertigt.<br />Mit Zeit gereift.
+                </h5>
+                <p class="ritual__body" data-i18n="ritual.slide2.body">
+                  Geboren aus jahrhundertealter Handwerkskunst in einem kleinen
+                  Küstendorf in Ostasien.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel__slide">
+            <div class="ritual__inner">
+              <div class="ritual__image-wrap">
+                <img
+                  class="ritual__image-base"
+                  src="/images/carousel/slide-3.jpg"
+                  alt="Ein glimmendes Räucherstäbchen auf einer gesprenkelten Keramikschale, ein feiner Rauchfaden steigt auf"
+                  data-i18n-alt="ritual.slide3.alt"
+                  loading="lazy"
+                />
+              </div>
+              <div class="ritual__text reveal reveal--right">
+                <span class="ritual__label" data-i18n="ritual.slide3.label"
+                  >Der stille Moment</span
+                >
+                <div class="ritual__divider" aria-hidden="true"></div>
+                <h5 class="ritual__heading" data-i18n="ritual.slide3.heading">
+                  Ein Faden Rauch.<br />Eine halbe Stunde.
+                </h5>
+                <p class="ritual__body" data-i18n="ritual.slide3.body">
+                  Fein, hell, ruhig. Gut dreißig Minuten, die nur dir gehören,
+                  bis nichts bleibt als eine Linie Asche.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="carousel__slide">
+            <div class="ritual__inner">
+              <div class="ritual__image-wrap">
+                <img
+                  class="ritual__image-base"
+                  src="/images/carousel/slide-4.jpg"
+                  alt="Vier Momente mit Far Shore: am Schreibtisch, auf dem Sofa mit einem Buch, bei einer Tasse Tee mit Estuary und neben einer Yogamatte mit Mist"
+                  data-i18n-alt="ritual.slide4.alt"
+                  loading="lazy"
+                />
+              </div>
+              <div class="ritual__text reveal reveal--right">
+                <span class="ritual__label" data-i18n="ritual.slide4.label"
+                  >Der Weg zur Küste</span
+                >
+                <div class="ritual__divider" aria-hidden="true"></div>
+                <h5 class="ritual__heading" data-i18n="ritual.slide4.heading">
+                  Vier Landschaften.<br />Vier Momente.
+                </h5>
+                <p class="ritual__body" data-i18n="ritual.slide4.body">
+                  Wähle nach dem Moment: The Mist für die Morgenrituale, The
+                  Driftwood für tiefen Fokus, The Estuary für das bewusste
+                  Abschalten, The Dune für lange Abende.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -354,7 +450,7 @@
               <!-- TODO: replace with the Estuary product listing once live -->
               <a
                 class="product-card__cta"
-                href="https://www.amazon.de"
+                href="https://www.amazon.de/dp/B0HMLMRZ73"
                 target="_blank"
                 rel="noopener noreferrer"
                 data-i18n="product.add_to_cart"
@@ -523,114 +619,122 @@
           class="contact__logo"
         />
 
-        <h2 class="contact__headline reveal" data-i18n="contact.headline">
+        <h3 class="contact__headline reveal" data-i18n="contact.headline">
           Erreiche das Ufer.
-        </h2>
+        </h3>
         <p class="contact__poetry reveal" data-i18n="contact.poetry">
           Wir lesen jede Nachricht. Wir antworten mit Sorgfalt.
         </p>
 
         <div class="contact__divider" aria-hidden="true"></div>
 
-        <form class="contact__form" id="contactForm" novalidate>
-          <div class="contact__hp" aria-hidden="true">
-            <input type="text" name="_honey" tabindex="-1" autocomplete="off" />
-          </div>
-
-          <div class="contact__row">
-            <div class="contact__field">
+        <!-- Form and success message share one spot; the message replaces the form in place -->
+        <div class="contact__stage">
+          <form class="contact__form" id="contactForm" novalidate>
+            <div class="contact__hp" aria-hidden="true">
               <input
                 type="text"
-                name="name"
-                data-i18n-placeholder="contact.name.placeholder"
-                placeholder="Dein Name"
-                required
-                autocomplete="name"
+                name="_honey"
+                tabindex="-1"
+                autocomplete="off"
               />
             </div>
-            <div class="contact__field">
-              <input
-                type="email"
-                name="email"
-                data-i18n-placeholder="contact.email.placeholder"
-                placeholder="E-Mail-Adresse"
-                required
-                autocomplete="email"
-              />
-            </div>
-          </div>
 
-          <div class="contact__field" style="position: relative">
-            <select name="topic" id="topicSelect" required>
-              <option
-                value=""
-                disabled
-                selected
-                data-i18n="contact.topic.default"
+            <div class="contact__row">
+              <div class="contact__field">
+                <input
+                  type="text"
+                  name="name"
+                  data-i18n-placeholder="contact.name.placeholder"
+                  placeholder="Dein Name"
+                  required
+                  autocomplete="name"
+                />
+              </div>
+              <div class="contact__field">
+                <input
+                  type="email"
+                  name="email"
+                  data-i18n-placeholder="contact.email.placeholder"
+                  placeholder="E-Mail-Adresse"
+                  required
+                  autocomplete="email"
+                />
+              </div>
+            </div>
+
+            <div class="contact__field" style="position: relative">
+              <select name="topic" id="topicSelect" required>
+                <option
+                  value=""
+                  disabled
+                  selected
+                  data-i18n="contact.topic.default"
+                >
+                  Thema
+                </option>
+                <option value="order" data-i18n="contact.topic.order">
+                  Bestellanfrage
+                </option>
+                <option value="wholesale" data-i18n="contact.topic.wholesale">
+                  Großhandel &amp; Händler
+                </option>
+                <option value="press" data-i18n="contact.topic.press">
+                  Presse &amp; Zusammenarbeit
+                </option>
+                <option value="general" data-i18n="contact.topic.general">
+                  Allgemeines
+                </option>
+              </select>
+              <svg
+                class="contact__select-arrow"
+                width="10"
+                height="6"
+                viewBox="0 0 10 6"
+                fill="none"
+                aria-hidden="true"
               >
-                Thema
-              </option>
-              <option value="order" data-i18n="contact.topic.order">
-                Bestellanfrage
-              </option>
-              <option value="wholesale" data-i18n="contact.topic.wholesale">
-                Großhandel &amp; Händler
-              </option>
-              <option value="press" data-i18n="contact.topic.press">
-                Presse &amp; Zusammenarbeit
-              </option>
-              <option value="general" data-i18n="contact.topic.general">
-                Allgemeines
-              </option>
-            </select>
-            <svg
-              class="contact__select-arrow"
-              width="10"
-              height="6"
-              viewBox="0 0 10 6"
-              fill="none"
-              aria-hidden="true"
-            >
-              <path
-                d="M1 1L5 5L9 1"
-                stroke="rgba(236,234,228,0.5)"
-                stroke-width="1"
-                stroke-linecap="round"
-              />
-            </svg>
-          </div>
+                <path
+                  d="M1 1L5 5L9 1"
+                  stroke="rgba(236,234,228,0.5)"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
 
-          <div class="contact__field">
-            <textarea
-              name="message"
-              data-i18n-placeholder="contact.msg.placeholder"
-              placeholder="Deine Nachricht"
-              required
-            ></textarea>
-          </div>
+            <div class="contact__field">
+              <textarea
+                name="message"
+                data-i18n-placeholder="contact.msg.placeholder"
+                placeholder="Deine Nachricht"
+                required
+              ></textarea>
+            </div>
 
-          <div class="contact__actions">
-            <span class="contact__note" data-i18n="contact.note"
-              >Wir antworten innerhalb von 2 Werktagen.</span
-            >
-            <button
-              type="submit"
-              class="contact__submit"
-              data-i18n="contact.submit"
-            >
-              Senden
-            </button>
-          </div>
-        </form>
+            <div class="contact__actions">
+              <span class="contact__note" data-i18n="contact.note"
+                >Wir antworten innerhalb von 2 Werktagen.</span
+              >
+              <button
+                type="submit"
+                class="contact__submit"
+                data-i18n="contact.submit"
+              >
+                Senden
+              </button>
+            </div>
+          </form>
 
-        <div class="contact__success" id="contactSuccess" aria-live="polite">
-          <div class="contact__divider" style="margin-inline: auto"></div>
-          <p data-i18n="contact.success">
-            Deine Nachricht ist unterwegs.<br />
-            <span style="opacity: 0.5; font-size: var(--text-base)"
-              >Wir melden uns in Kürze.</span
-            >
-          </p>
+          <div class="contact__success" id="contactSuccess" aria-live="polite">
+            <div class="contact__divider" style="margin-inline: auto"></div>
+            <p data-i18n="contact.success">
+              Deine Nachricht ist unterwegs.<br />
+              <span style="opacity: 0.5; font-size: var(--text-base)"
+                >Wir melden uns in Kürze.</span
+              >
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -661,6 +765,9 @@
     <script type="module" src="/js/i18n.js"></script>
     <script type="module" src="/js/scrollTo.js"></script>
     <script type="module">
+      import { sendForm } from "/js/form-service.js";
+      import { t } from "/js/i18n.js";
+
       const form = document.getElementById("contactForm");
       const success = document.getElementById("contactSuccess");
       const select = document.getElementById("topicSelect");
@@ -672,19 +779,49 @@
       }
 
       if (form) {
-        form.addEventListener("submit", (e) => {
-          e.preventDefault();
-          const name = form.name.value.trim();
-          const email = form.email.value.trim();
-          const message = form.message.value.trim();
-          if (!name || !email || !message) return;
+        const submitBtn = form.querySelector(".contact__submit");
+        const error = document.createElement("p");
+        error.className = "contact__error";
+        error.setAttribute("role", "alert");
+        error.hidden = true;
+        form.appendChild(error);
 
-          form.style.opacity = "0";
-          form.style.transition = "opacity 0.6s ease";
-          setTimeout(() => {
-            form.style.display = "none";
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          // form.name is the form's own name attribute, so use elements.namedItem
+          const name = form.elements.namedItem("name").value.trim();
+          const email = form.elements.namedItem("email").value.trim();
+          const message = form.elements.namedItem("message").value.trim();
+          if (!form.checkValidity() || !name || !email || !message) {
+            form.reportValidity();
+            return;
+          }
+
+          error.hidden = true;
+          submitBtn.disabled = true;
+          submitBtn.textContent = "…";
+
+          try {
+            const topic = select.options[select.selectedIndex].text.trim();
+            await sendForm(
+              { Name: name, "E-Mail": email, Thema: topic, Nachricht: message },
+              {
+                subject: `Kontaktanfrage: ${topic} – ${name}`,
+                replyTo: email,
+                honeypot: form.elements.namedItem("_honey").value,
+              },
+            );
+
+            form.classList.add("is-sent");
             success.classList.add("is-visible");
-          }, 600);
+          } catch (err) {
+            console.error("Contact form:", err);
+            error.innerHTML = t("contact.error");
+            error.hidden = false;
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = t("contact.submit");
+          }
         });
       }
     </script>
@@ -728,6 +865,7 @@
     </script>
     <script type="module" src="/js/nav.js"></script>
     <script type="module" src="/js/parallax.js"></script>
+    <script type="module" src="/js/carousel.js"></script>
     <script type="module" src="/js/scroll-reveal.js"></script>
   </body>
 </html>

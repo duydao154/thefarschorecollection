@@ -2,7 +2,32 @@
 
 .ritual {
   background: var(--color-sand);
-  padding-block: var(--space-24);
+  padding-block: var(--space-24) 0;
+  min-height: 100vh;
+  min-height: 100svh; /* ignores mobile browser toolbars */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Carousel fills the section; track takes the spare height so the
+   controls (appended by carousel.js) sit at the bottom */
+.ritual > .carousel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ritual .carousel__track {
+  flex: 1;
+}
+
+.ritual .carousel__slide {
+  display: flex;
+  align-items: center;
+}
+
+.ritual .carousel__slide > .ritual__inner {
+  flex: 1;
 }
 
 .ritual__inner {
@@ -18,8 +43,7 @@
 /* Parallax image stack */
 .ritual__image-wrap {
   position: relative;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
+  aspect-ratio: 1 / 1;
 }
 
 .ritual__image-base,
@@ -34,8 +58,9 @@
 .ritual__image-lid {
   opacity: 0;
   transform: translateY(-20px);
-  transition: opacity var(--duration-slow) var(--ease-out),
-              transform var(--duration-slow) var(--ease-out);
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
 }
 
 /* Text side */
@@ -76,23 +101,48 @@
   margin-block: var(--space-2);
 }
 
-@media (max-width: 768px) {
+/* Tablet: 768px–1023px */
+@media (max-width: 1023px) {
+  .ritual__inner {
+    gap: var(--space-8);
+  }
+}
+
+/* Phone: ≤767px */
+@media (max-width: 767px) {
+  /* Unwrap .ritual__text so its children and the image share one column,
+     then reorder: label → divider → image → heading → body */
   .ritual__inner {
     grid-template-columns: 1fr;
-    gap: var(--space-12);
-  }
-
-  .ritual__image-wrap {
-    max-width: 480px;
-    margin-inline: auto;
+    gap: var(--space-2);
+    justify-items: center;
+    text-align: center;
   }
 
   .ritual__text {
-    text-align: center;
-    align-items: center;
+    display: contents;
   }
 
+  .ritual__label {
+    order: 1;
+  }
+  .ritual__divider {
+    order: 2;
+  }
+  .ritual__heading {
+    order: 4;
+    font-size: 2rem; /* 32px */
+    margin-top: var(--space-4);
+  }
   .ritual__body {
-    max-width: 100%;
+    order: 5;
+    line-height: var(--leading-normal);
+    max-width: 480px; /* same column width as the image */
+  }
+
+  .ritual__image-wrap {
+    order: 3;
+    width: 100%; /* children are absolute, so without a width it collapses to 0 */
+    max-width: 480px;
   }
 }
