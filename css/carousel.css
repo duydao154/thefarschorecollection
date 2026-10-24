@@ -37,7 +37,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-6);
-  margin-top: var(--space-12);
+  margin-bottom: var(--space-12);
 }
 
 .carousel__arrow {
@@ -109,6 +109,7 @@
 @media (max-width: 767px) {
   .carousel__controls {
     margin-top: var(--space-2);
+    margin-bottom: 0;
   }
 }
 
