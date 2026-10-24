@@ -13,7 +13,7 @@ const translations = {
 
     // Hero
     "hero.headline": "Du bist angekommen.",
-    "hero.poetry": "Kein Ort auf einer Karte – nur der stille Rand des Tages.",
+    "hero.poetry": "Wo die Karte endet, wird der Tag still.",
     "hero.scroll": "Entdecken",
     "hero.scroll.aria": "Zur Kollektion scrollen",
     "hero.play.aria": "Video pausieren",
@@ -110,7 +110,7 @@ const translations = {
 
     // Hero
     "hero.headline": "You Have Arrived.",
-    "hero.poetry": "Not a place found on a map, but the quiet edge of the day.",
+    "hero.poetry": "Where the map ends, the day becomes still.",
     "hero.scroll": "Scroll",
     "hero.scroll.aria": "Scroll to collection",
     "hero.play.aria": "Pause video",
