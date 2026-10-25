@@ -118,6 +118,13 @@
   margin-inline: auto;
 }
 
+/* The four boxes: a wide strip on desktop, a 2×2 square on phones (see <picture>) */
+.article-body__inner .collection-image {
+  aspect-ratio: 2048 / 480;
+  object-fit: contain;
+  background: var(--color-sand);
+}
+
 .article-body__inner p {
   font-family: var(--font-body);
   font-size: var(--text-base);
@@ -410,6 +417,10 @@
 
   .article-body__inner .journal-image {
     width: 100%;
+  }
+
+  .article-body__inner .collection-image {
+    aspect-ratio: 1 / 1;
   }
 
   .article-table th,

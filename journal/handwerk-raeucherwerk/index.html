@@ -25,19 +25,19 @@
 <body>
 
   <!-- NAV -->
-  <nav class="site-nav site-nav--scrolled" role="navigation" aria-label="Hauptnavigation">
+  <nav class="site-nav site-nav--scrolled" role="navigation" data-i18n-aria="nav.aria">
     <div class="site-nav__inner">
       <a href="/" class="site-nav__wordmark" aria-label="Far Shore home">
         <img src="/images/logo/logo_horizontal.png" alt="Far Shore" class="site-nav__logo">
       </a>
       <ul class="site-nav__links" role="list">
-        <li><a href="/#collection" class="site-nav__link" data-i18n="nav.shop">Shop</a></li>
-        <li><a href="/#journal" class="site-nav__link" data-i18n="nav.journal">Journal</a></li>
-        <li><a href="/#ritual" class="site-nav__link" data-i18n="nav.story">Unsere Geschichte</a></li>
-        <li><a href="/#contact" class="site-nav__link" data-i18n="nav.contact">Kontakt</a></li>
+        <li><a href="/#collection" class="site-nav__link" data-i18n="nav.shop"></a></li>
+        <li><a href="/#journal" class="site-nav__link" data-i18n="nav.journal"></a></li>
+        <li><a href="/#ritual" class="site-nav__link" data-i18n="nav.story"></a></li>
+        <li><a href="/#contact" class="site-nav__link" data-i18n="nav.contact"></a></li>
         <li><button class="lang-toggle" id="langToggle">EN</button></li>
       </ul>
-      <button class="site-nav__hamburger" data-i18n-aria="nav.open" aria-label="Menü öffnen">
+      <button class="site-nav__hamburger" data-i18n-aria="nav.open">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -45,12 +45,12 @@
 
   <!-- Mobile overlay -->
   <div class="site-nav__overlay" role="dialog" aria-modal="true" aria-label="Navigationsmenü">
-    <button class="site-nav__overlay-close" data-i18n-aria="nav.close" aria-label="Menü schließen">&times;</button>
+    <button class="site-nav__overlay-close" data-i18n-aria="nav.close">&times;</button>
     <nav>
-      <a href="/#collection" class="site-nav__overlay-link" data-i18n="nav.shop">Shop</a>
-      <a href="/#journal" class="site-nav__overlay-link" data-i18n="nav.journal">Journal</a>
-      <a href="/#ritual" class="site-nav__overlay-link" data-i18n="nav.story">Unsere Geschichte</a>
-      <a href="/#contact" class="site-nav__overlay-link" data-i18n="nav.contact">Kontakt</a>
+      <a href="/#collection" class="site-nav__overlay-link" data-i18n="nav.shop"></a>
+      <a href="/#journal" class="site-nav__overlay-link" data-i18n="nav.journal"></a>
+      <a href="/#ritual" class="site-nav__overlay-link" data-i18n="nav.story"></a>
+      <a href="/#contact" class="site-nav__overlay-link" data-i18n="nav.contact"></a>
     </nav>
     <button class="lang-toggle lang-toggle--overlay" id="langToggleOverlay">EN</button>
   </div>
@@ -61,15 +61,12 @@
     <div class="article-hero__inner">
       <a href="/#journal" class="article-hero__back">
         <svg viewBox="0 0 16 16" aria-hidden="true"><polyline points="10,4 6,8 10,12"/></svg>
-        <span data-i18n="article.back">Notizen von der Küste</span>
+        <span data-i18n="article.back"></span>
       </a>
-      <span class="article-hero__label" data-lang="de">Herkunft &amp; Handwerk</span>
-      <span class="article-hero__label" data-lang="en" hidden>Origin &amp; Craftsmanship</span>
-      <h1 class="article-hero__title" data-lang="de">Die Kunst des langsamen Räucherwerks: Wie ein Far Shore Stäbchen entsteht</h1>
-      <h1 class="article-hero__title" data-lang="en" hidden>The Art of Slow Incense: How a Far Shore Stick is Made</h1>
+      <span class="article-hero__label" data-i18n="handwerk-raeucherwerk.label"></span>
+      <h1 class="article-hero__title" data-i18n="handwerk-raeucherwerk.title"></h1>
       <div class="article-hero__divider" aria-hidden="true"></div>
-      <p class="article-hero__meta" data-lang="de">4 Min. Lesezeit</p>
-      <p class="article-hero__meta" data-lang="en" hidden>4 min read</p>
+      <p class="article-hero__meta" data-i18n="handwerk-raeucherwerk.meta"></p>
     </div>
   </header>
 
@@ -82,145 +79,47 @@
   <main class="article-body" id="main-content">
     <div class="article-body__inner">
 
-      <!-- ── GERMAN ── -->
-      <div data-lang="de">
-        <p class="article-lead">
-          Ein gutes Räucherstäbchen lässt sich nicht beschleunigen. Man kann es nur begleiten –
-          vom Pulver bis zur Asche.
-        </p>
+      <p data-i18n="handwerk-raeucherwerk.body1" class="article-lead"></p>
 
-        <h2>Ein Handwerk von der Küste Südchinas</h2>
+      <h2 data-i18n="handwerk-raeucherwerk.body2"></h2>
 
-        <p>
-          Unser Räucherwerk entsteht in einer kleinen Küstenstadt im Süden Chinas, in der die
-          traditionelle Kunst der Räucherwerkherstellung über 600 Jahre bis in die Ming-Dynastie
-          zurückreicht. Das Wissen dort steht in keinem Handbuch. Es wird weitergegeben: von Hand
-          zu Hand, von Nase zu Nase.
-        </p>
+      <p data-i18n="handwerk-raeucherwerk.body3"></p>
 
-        <p>Jedes Far Shore Stäbchen durchläuft vier Schritte. Keiner davon lässt sich überspringen.</p>
+      <p data-i18n="handwerk-raeucherwerk.body4"></p>
 
-        <h3>1. Die Mischung</h3>
+      <h3 data-i18n="handwerk-raeucherwerk.body5"></h3>
 
-        <p>
-          Am Anfang stehen natürliche Holzpulver und Pflanzenharze. Sie werden fein gesiebt und
-          mit Wasser zu einer dichten, formbaren Masse verknetet. Das Verhältnis entscheidet über
-          alles: wie gleichmäßig das Stäbchen glimmt, wie ruhig es brennt, wie lange der Duft
-          nachklingt.
-        </p>
+      <p data-i18n="handwerk-raeucherwerk.body6"></p>
 
-        <h3>2. Das Pressen</h3>
+      <img class="journal-image" data-i18n-alt="handwerk-raeucherwerk.alt2" src="/images/journal/handwerk-raeucherwerk/inline-2.jpg" ">
 
-        <img src="/images/journal/handwerk-raeucherwerk/inline-1.jpg" alt="Von Hand wird die Masse durch eine feine Düse zu gleichmäßigen Strängen gepresst" style="width: 50%; margin-inline: auto;">
+      <h3 data-i18n="handwerk-raeucherwerk.body7"></h3>
 
-        <p>
-          Die Masse wird durch eine feine Düse gepresst – ein Verfahren, das man Extrusion nennt.
-          Heraus kommt ein durchgehender Strang von genau drei Millimetern Durchmesser, der auf
-          120 Millimeter Länge geschnitten wird. Kein Bambusstab trägt ihn. Das Stäbchen trägt
-          sich selbst.
-        </p>
+      <p data-i18n="handwerk-raeucherwerk.body8"></p>
 
-        <h3>3. Das Tauchen</h3>
+      <img class="journal-image" data-i18n-alt="handwerk-raeucherwerk.alt1" src="/images/journal/handwerk-raeucherwerk/inline-1.jpg"">
 
-        <p>
-          Nun folgt der Schritt, der jedem Stäbchen seine Landschaft gibt. Von Hand werden die
-          Stäbchen in reine ätherische Öle getaucht – Zedernholz und Vetiver für Driftwood,
-          Wermut, Bergamotte und Sandelholz für Mist, Sandelholz, Agarholz und Rose für Dune,
-          Kamille, Lavendel und Vetiver für Estuary. Wie tief, wie lange, wie oft: Das entscheidet
-          das Auge des Handwerkers, nicht eine Maschine.
-        </p>
+      <h3 data-i18n="handwerk-raeucherwerk.body9"></h3>
 
-        <h3>4. Das Reifen</h3>
+      <p data-i18n="handwerk-raeucherwerk.body10"></p>
 
-        <p>
-          Zuletzt ruhen die Stäbchen auf Holzgestellen und trocknen langsam an der Luft. Kein
-          Ofen, keine künstliche Hitze. So können die Öle sich tief in das Holz setzen, statt an
-          der Oberfläche zu verfliegen. Ein zu schnell getrocknetes Stäbchen bricht, brennt
-          unruhig und verliert seinen Duft. Ein langsam gereiftes Stäbchen bleibt stabil, glimmt
-          gleichmäßig und entfaltet seine Noten Schicht für Schicht.
-        </p>
+      <h3 data-i18n="handwerk-raeucherwerk.body11"></h3>
 
-        <h2>Warum Langsamkeit zählt</h2>
+      
 
-        <p>
-          Massenware wird in Stunden produziert. Ein Far Shore Stäbchen braucht Zeit, Geduld und
-          Menschen, die ihr Handwerk seit Generationen kennen. Diese Zeit riechst du. Im feinen
-          Rauch, im klaren Duft, in der Asche, die als ungebrochene Linie zurückbleibt.
-        </p>
-      </div>
+      <p data-i18n="handwerk-raeucherwerk.body12"></p>
 
-      <!-- ── ENGLISH ── -->
-      <div data-lang="en" hidden>
-        <p class="article-lead">
-          A good incense stick can't be hurried. It can only be accompanied — from powder to ash.
-        </p>
+      <img class="journal-image" data-i18n-alt="handwerk-raeucherwerk.alt1" src="/images/journal/handwerk-raeucherwerk/hero.jpg"">
+      <h2 data-i18n="handwerk-raeucherwerk.body13"></h2>
 
-        <h2>A craft from the South China coast</h2>
-
-        <p>
-          Our incense is made in a small coastal town in South China, where the traditional
-          incense-making technique dates back to the Ming dynasty, over 600 years ago. The
-          knowledge there isn't written in any manual. It is passed on: hand to hand, nose to
-          nose.
-        </p>
-
-        <p>Every Far Shore stick goes through four steps. None can be skipped.</p>
-
-        <h3>1. The blend</h3>
-
-        <p>
-          It begins with natural wood powders and plant resins. They are finely sifted and
-          kneaded with water into a dense, workable dough. The ratio decides everything: how
-          evenly the stick smoulders, how calmly it burns, how long the scent lingers.
-        </p>
-
-        <h3>2. The pressing</h3>
-
-        <img src="/images/journal/handwerk-raeucherwerk/inline-1.jpg" alt="By hand, the dough is pressed through a fine die into even strands" style="width: 50%; margin-inline: auto;">
-
-        <p>
-          The dough is pressed through a fine die, a process called extrusion. What emerges is a
-          continuous strand exactly three millimetres across, cut to 120 millimetres. No bamboo
-          stick holds it up. The stick holds itself.
-        </p>
-
-        <h3>3. The dipping</h3>
-
-        <p>
-          Next comes the step that gives each stick its landscape. By hand, the sticks are
-          dipped in pure essential oils: cedarwood and vetiver for The Driftwood; wormwood,
-          bergamot and sandalwood for The Mist; sandalwood, agarwood and rose for The Dune;
-          chamomile, lavender and vetiver for The Estuary. How deep, how long, how often: the
-          maker's eye decides, not a machine.
-        </p>
-
-        <h3>4. The curing</h3>
-
-        <p>
-          Finally, the sticks rest on wooden racks and dry slowly in the open air. No oven, no
-          artificial heat. This lets the oils settle deep into the wood instead of evaporating
-          from the surface. A stick dried too fast breaks, burns unevenly and loses its scent. A
-          slowly cured stick stays stable, smoulders evenly and opens its notes layer by layer.
-        </p>
-
-        <h2>Why slowness matters</h2>
-
-        <p>
-          Mass-market incense is made in hours. A Far Shore stick takes time, patience and people
-          who have known their craft for generations. You can smell that time. In the fine
-          smoke, the clear scent, and the ash that remains as one unbroken line.
-        </p>
-      </div>
+      <p data-i18n="handwerk-raeucherwerk.body14"></p>
 
       <div class="article-cta">
-        <p data-lang="de">Vom Werkstattregal zu dir.</p>
-        <p data-lang="en" hidden>From the workshop shelf to you.</p>
+        <p data-i18n="handwerk-raeucherwerk.cta"></p>
         <div class="article-cta__actions">
           <!-- TODO: point to the live Amazon storefront/collection page once available -->
-          <a class="article-btn article-btn--solid" href="https://www.amazon.de" target="_blank" rel="noopener noreferrer" data-lang="de">Vom Werkstattregal zu dir &rarr;</a>
-          <a class="article-btn article-btn--solid" href="https://www.amazon.de" target="_blank" rel="noopener noreferrer" data-lang="en" hidden>From the Workshop to You &rarr;</a>
-          <a class="article-btn" href="/journal/far-shore-ritual/" data-lang="de">Wie du dein Stäbchen entzündest &rarr;</a>
-          <a class="article-btn" href="/journal/far-shore-ritual/" data-lang="en" hidden>How to Light Your Stick &rarr;</a>
+          <a class="article-btn article-btn--solid" href="https://www.amazon.de" target="_blank" rel="noopener noreferrer" data-i18n="handwerk-raeucherwerk.link1"></a>
+          <a class="article-btn" href="/journal/far-shore-ritual/" data-i18n="handwerk-raeucherwerk.link2"></a>
         </div>
       </div>
 
@@ -231,24 +130,22 @@
   <!-- MORE FROM THE JOURNAL -->
   <section class="article-more" aria-label="More from the journal">
     <div class="article-more__inner">
-      <h2 class="article-more__heading" data-i18n="article.more">Weiterlesen</h2>
+      <h2 class="article-more__heading" data-i18n="article.more"></h2>
       <div class="article-more__grid">
 
         <a href="/journal/far-shore-ritual/" class="article-more__card">
           <img class="article-more__card-image" src="/images/journal/far-shore-ritual/hero.jpg" alt="Das Far Shore Ritual">
           <div class="article-more__card-body">
-            <h3 class="article-more__card-title" data-lang="de">Das Far Shore Ritual</h3>
-            <h3 class="article-more__card-title" data-lang="en" hidden>The Far Shore Ritual</h3>
-            <span class="article-more__card-link" data-i18n="article.read_more">Mehr lesen &rarr;</span>
+            <h3 class="article-more__card-title" data-i18n="journal.card4.title"></h3>
+            <span class="article-more__card-link" data-i18n="article.read_more"></span>
           </div>
         </a>
 
         <a href="/journal/kernloses-raeucherwerk/" class="article-more__card">
-          <img class="article-more__card-image" src="/images/journal/kernloses-raeucherwerk/inline-1.jpg" alt="Kernlos. Botanisch.">
+          <img class="article-more__card-image" src="/images/journal/kernloses-raeucherwerk/inline-1.jpeg" alt="Kernlos. Botanisch.">
           <div class="article-more__card-body">
-            <h3 class="article-more__card-title" data-lang="de">Kernlos. Botanisch.</h3>
-            <h3 class="article-more__card-title" data-lang="en" hidden>Coreless. Botanical.</h3>
-            <span class="article-more__card-link" data-i18n="article.read_more">Mehr lesen &rarr;</span>
+            <h3 class="article-more__card-title" data-i18n="journal.card2.title"></h3>
+            <span class="article-more__card-link" data-i18n="article.read_more"></span>
           </div>
         </a>
 
@@ -279,16 +176,15 @@
       </div>
       <div class="site-footer__divider"></div>
       <div class="site-footer__newsletter">
-        <p class="site-footer__newsletter-label" data-i18n="footer.newsletter.label">Bleibe in Kontakt.</p>
+        <p class="site-footer__newsletter-label" data-i18n="footer.newsletter.label"></p>
         <form class="site-footer__newsletter-form" action="#" method="post" novalidate>
           <input class="site-footer__newsletter-input" type="email" name="email"
-            data-i18n-placeholder="footer.newsletter.placeholder"
-            placeholder="Deine E-Mail-Adresse" aria-label="E-Mail-Adresse" required>
-          <button class="site-footer__newsletter-btn" type="submit" data-i18n="footer.newsletter.btn">Abonnieren</button>
+            data-i18n-placeholder="footer.newsletter.placeholder" aria-label="E-Mail-Adresse" required>
+          <button class="site-footer__newsletter-btn" type="submit" data-i18n="footer.newsletter.btn"></button>
         </form>
       </div>
       <div class="site-footer__divider"></div>
-      <p class="site-footer__legal" data-i18n="footer.legal">&copy; 2025 Far Shore. Alle Rechte vorbehalten.</p>
+      <p class="site-footer__legal" data-i18n="footer.legal"></p>
     </div>
   </footer>
 

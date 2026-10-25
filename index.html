@@ -39,12 +39,7 @@
     <!-- ─────────────────────────────────────────
        NAV
   ───────────────────────────────────────── -->
-    <nav
-      class="site-nav"
-      role="navigation"
-      data-i18n-aria="nav.shop"
-      aria-label="Hauptnavigation"
-    >
+    <nav class="site-nav" role="navigation" data-i18n-aria="nav.aria">
       <div class="site-nav__inner">
         <a href="/" class="site-nav__wordmark" aria-label="Far Shore home">
           <img
@@ -60,32 +55,28 @@
               class="site-nav__link"
               data-scroll-to="collection"
               data-i18n="nav.shop"
-              >Shop</a
-            >
+            ></a>
           </li>
           <li>
             <a
               class="site-nav__link"
               data-scroll-to="journal"
               data-i18n="nav.journal"
-              >Journal</a
-            >
+            ></a>
           </li>
           <li>
             <a
               class="site-nav__link"
               data-scroll-to="ritual"
               data-i18n="nav.story"
-              >Unsere Geschichte</a
-            >
+            ></a>
           </li>
           <li>
             <a
               class="site-nav__link"
               data-scroll-to="contact"
               data-i18n="nav.contact"
-              >Kontakt</a
-            >
+            ></a>
           </li>
           <li><button class="lang-toggle" id="langToggle">EN</button></li>
         </ul>
@@ -93,7 +84,6 @@
         <button
           class="site-nav__hamburger"
           data-i18n-aria="nav.open"
-          aria-label="Menü öffnen"
           aria-expanded="false"
         >
           <span></span>
@@ -110,11 +100,7 @@
       aria-modal="true"
       aria-label="Navigationsmenü"
     >
-      <button
-        class="site-nav__overlay-close"
-        data-i18n-aria="nav.close"
-        aria-label="Menü schließen"
-      >
+      <button class="site-nav__overlay-close" data-i18n-aria="nav.close">
         &times;
       </button>
       <nav>
@@ -122,23 +108,22 @@
           href="#collection"
           class="site-nav__overlay-link"
           data-i18n="nav.shop"
-          >Shop</a
-        >
+        ></a>
         <a
           href="#journal"
           class="site-nav__overlay-link"
           data-i18n="nav.journal"
-          >Journal</a
-        >
-        <a href="#ritual" class="site-nav__overlay-link" data-i18n="nav.story"
-          >Unsere Geschichte</a
-        >
+        ></a>
+        <a
+          href="#ritual"
+          class="site-nav__overlay-link"
+          data-i18n="nav.story"
+        ></a>
         <a
           href="#contact"
           class="site-nav__overlay-link"
           data-i18n="nav.contact"
-          >Kontakt</a
-        >
+        ></a>
       </nav>
       <button class="lang-toggle lang-toggle--overlay" id="langToggleOverlay">
         EN
@@ -162,7 +147,6 @@
           class="hero__ctrl-btn"
           id="heroPlay"
           data-i18n-aria="hero.play.aria"
-          aria-label="Video pausieren"
         >
           <!-- Play icon (shown when paused) -->
           <svg
@@ -188,7 +172,6 @@
           class="hero__ctrl-btn"
           id="heroMute"
           data-i18n-aria="hero.mute.aria"
-          aria-label="Ton einschalten"
         >
           <!-- Muted icon (shown when muted) -->
           <svg
@@ -229,19 +212,14 @@
 
       <!-- Text content — bottom of video -->
       <div class="hero__content">
-        <h1 class="hero__headline" data-i18n="hero.headline">
-          Du bist angekommen.
-        </h1>
-        <p class="hero__poetry" data-i18n="hero.poetry">
-          Kein Ort auf einer Karte, sondern der stille Rand des Tages.
-        </p>
+        <h1 class="hero__headline" data-i18n="hero.headline"></h1>
+        <p class="hero__poetry" data-i18n="hero.poetry"></p>
         <a
           href="#collection"
           class="hero__scroll-down"
           data-i18n-aria="hero.scroll.aria"
-          aria-label="Zur Kollektion scrollen"
         >
-          <span data-i18n="hero.scroll">Entdecken</span>
+          <span data-i18n="hero.scroll"></span>
           <svg
             viewBox="0 0 16 24"
             stroke-width="1.5"
@@ -279,17 +257,16 @@
 
               <!-- Right: text -->
               <div class="ritual__text reveal reveal--right">
-                <span class="ritual__label" data-i18n="ritual.slide1.label"
-                  >Das Streben nach Reinheit</span
-                >
+                <span
+                  class="ritual__label"
+                  data-i18n="ritual.slide1.label"
+                ></span>
                 <div class="ritual__divider" aria-hidden="true"></div>
-                <h5 class="ritual__heading" data-i18n="ritual.slide1.heading">
-                  Kernlos.<br />Botanisch.
-                </h5>
-                <p class="ritual__body" data-i18n="ritual.slide1.body">
-                  Ohne Bambuskern. Nur gepresste Holzpulver, Pflanzenharze und
-                  reine ätherische Öle.
-                </p>
+                <h5
+                  class="ritual__heading"
+                  data-i18n="ritual.slide1.heading"
+                ></h5>
+                <p class="ritual__body" data-i18n="ritual.slide1.body"></p>
               </div>
             </div>
           </div>
@@ -301,23 +278,21 @@
                 <img
                   class="ritual__image-base"
                   src="/images/carousel/slide-2.jpg"
-                  alt="Hunderte von Hand gefertigte Räucherstäbchen trocknen auf Holzgestellen in einem Werkstatthof"
                   data-i18n-alt="ritual.slide2.alt"
                   loading="lazy"
                 />
               </div>
               <div class="ritual__text reveal reveal--right">
-                <span class="ritual__label" data-i18n="ritual.slide2.label"
-                  >Die Kunst der Geduld</span
-                >
+                <span
+                  class="ritual__label"
+                  data-i18n="ritual.slide2.label"
+                ></span>
                 <div class="ritual__divider" aria-hidden="true"></div>
-                <h5 class="ritual__heading" data-i18n="ritual.slide2.heading">
-                  Von Hand gefertigt.<br />Mit Zeit gereift.
-                </h5>
-                <p class="ritual__body" data-i18n="ritual.slide2.body">
-                  Geboren aus jahrhundertealter Handwerkskunst in einem kleinen
-                  Küstendorf in Ostasien.
-                </p>
+                <h5
+                  class="ritual__heading"
+                  data-i18n="ritual.slide2.heading"
+                ></h5>
+                <p class="ritual__body" data-i18n="ritual.slide2.body"></p>
               </div>
             </div>
           </div>
@@ -329,23 +304,21 @@
                 <img
                   class="ritual__image-base"
                   src="/images/carousel/slide-3.jpg"
-                  alt="Ein glimmendes Räucherstäbchen auf einer gesprenkelten Keramikschale, ein feiner Rauchfaden steigt auf"
                   data-i18n-alt="ritual.slide3.alt"
                   loading="lazy"
                 />
               </div>
               <div class="ritual__text reveal reveal--right">
-                <span class="ritual__label" data-i18n="ritual.slide3.label"
-                  >Der stille Moment</span
-                >
+                <span
+                  class="ritual__label"
+                  data-i18n="ritual.slide3.label"
+                ></span>
                 <div class="ritual__divider" aria-hidden="true"></div>
-                <h5 class="ritual__heading" data-i18n="ritual.slide3.heading">
-                  Ein Faden Rauch.<br />Eine halbe Stunde.
-                </h5>
-                <p class="ritual__body" data-i18n="ritual.slide3.body">
-                  Fein, hell, ruhig. Gut dreißig Minuten, die nur dir gehören,
-                  bis nichts bleibt als eine Linie Asche.
-                </p>
+                <h5
+                  class="ritual__heading"
+                  data-i18n="ritual.slide3.heading"
+                ></h5>
+                <p class="ritual__body" data-i18n="ritual.slide3.body"></p>
               </div>
             </div>
           </div>
@@ -357,24 +330,21 @@
                 <img
                   class="ritual__image-base"
                   src="/images/carousel/slide-4.jpg"
-                  alt="Vier Momente mit Far Shore: am Schreibtisch, auf dem Sofa mit einem Buch, bei einer Tasse Tee mit Estuary und neben einer Yogamatte mit Mist"
                   data-i18n-alt="ritual.slide4.alt"
                   loading="lazy"
                 />
               </div>
               <div class="ritual__text reveal reveal--right">
-                <span class="ritual__label" data-i18n="ritual.slide4.label"
-                  >Der Weg zur Küste</span
-                >
+                <span
+                  class="ritual__label"
+                  data-i18n="ritual.slide4.label"
+                ></span>
                 <div class="ritual__divider" aria-hidden="true"></div>
-                <h5 class="ritual__heading" data-i18n="ritual.slide4.heading">
-                  Vier Landschaften.<br />Vier Momente.
-                </h5>
-                <p class="ritual__body" data-i18n="ritual.slide4.body">
-                  Wähle nach dem Moment: The Mist für die Morgenrituale, The
-                  Driftwood für tiefen Fokus, The Estuary für das bewusste
-                  Abschalten, The Dune für lange Abende.
-                </p>
+                <h5
+                  class="ritual__heading"
+                  data-i18n="ritual.slide4.heading"
+                ></h5>
+                <p class="ritual__body" data-i18n="ritual.slide4.body"></p>
               </div>
             </div>
           </div>
@@ -387,9 +357,7 @@
   ───────────────────────────────────────── -->
     <section class="collection" id="collection" aria-label="Die Kollektion">
       <div class="collection__inner">
-        <h2 class="section-heading reveal" data-i18n="collection.heading">
-          Die Kollektion
-        </h2>
+        <h2 class="section-heading reveal" data-i18n="collection.heading"></h2>
 
         <div class="collection__grid stagger">
           <!-- Dune -->
@@ -399,17 +367,14 @@
             </div>
             <div class="product-card__body">
               <h3 class="product-card__name">Dune</h3>
-              <p class="product-card__notes" data-i18n="product.dune.notes">
-                Sandelholz, Agarholz &amp; Rose
-              </p>
+              <p class="product-card__notes" data-i18n="product.dune.notes"></p>
               <a
                 class="product-card__cta"
                 href="https://www.amazon.de/dp/B0HKR51VRP"
                 target="_blank"
                 rel="noopener noreferrer"
                 data-i18n="product.add_to_cart"
-                >Bei Amazon ansehen</a
-              >
+              ></a>
             </div>
           </article>
 
@@ -423,17 +388,14 @@
               <p
                 class="product-card__notes"
                 data-i18n="product.driftwood.notes"
-              >
-                Zeder &amp; Vetiver
-              </p>
+              ></p>
               <a
                 class="product-card__cta"
                 href="https://www.amazon.de/dp/B0HK24SSRL"
                 target="_blank"
                 rel="noopener noreferrer"
                 data-i18n="product.add_to_cart"
-                >Bei Amazon ansehen</a
-              >
+              ></a>
             </div>
           </article>
 
@@ -444,9 +406,10 @@
             </div>
             <div class="product-card__body">
               <h3 class="product-card__name">Estuary</h3>
-              <p class="product-card__notes" data-i18n="product.estuary.notes">
-                Kamille, Lavendel &amp; Vetiver
-              </p>
+              <p
+                class="product-card__notes"
+                data-i18n="product.estuary.notes"
+              ></p>
               <!-- TODO: replace with the Estuary product listing once live -->
               <a
                 class="product-card__cta"
@@ -454,8 +417,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 data-i18n="product.add_to_cart"
-                >Bei Amazon ansehen</a
-              >
+              ></a>
             </div>
           </article>
 
@@ -466,17 +428,14 @@
             </div>
             <div class="product-card__body">
               <h3 class="product-card__name">Mist</h3>
-              <p class="product-card__notes" data-i18n="product.mist.notes">
-                Wermut, Bergamotte &amp; Sandelholz
-              </p>
+              <p class="product-card__notes" data-i18n="product.mist.notes"></p>
               <a
                 class="product-card__cta"
                 href="https://www.amazon.de/dp/B0HKRL8SJ6"
                 target="_blank"
                 rel="noopener noreferrer"
                 data-i18n="product.add_to_cart"
-                >Bei Amazon ansehen</a
-              >
+              ></a>
             </div>
           </article>
         </div>
@@ -488,9 +447,7 @@
   ───────────────────────────────────────── -->
     <section class="journal" id="journal" aria-label="Journal">
       <div class="journal__inner">
-        <h2 class="section-heading reveal" data-i18n="journal.heading">
-          Notizen von der Küste
-        </h2>
+        <h2 class="section-heading reveal" data-i18n="journal.heading"></h2>
 
         <div class="journal__grid stagger">
           <!-- Card 1 — Brand story -->
@@ -502,22 +459,19 @@
               />
             </div>
             <div class="journal-card__body">
-              <h3 class="journal-card__title" data-i18n="journal.card1.title">
-                Die ferne Küste: Die Geschichte hinter Far Shore
-              </h3>
+              <h3
+                class="journal-card__title"
+                data-i18n="journal.card1.title"
+              ></h3>
               <p
                 class="journal-card__excerpt"
                 data-i18n="journal.card1.excerpt"
-              >
-                Ein verbannter Dichter, eine Insel am Rand der Welt und der
-                Rauch, der ihn heimbrachte...
-              </p>
+              ></p>
               <a
                 href="/journal/die-ferne-kueste/"
                 class="journal-card__read-more"
                 data-i18n="journal.read_more"
-                >Weiterlesen &rarr;</a
-              >
+              ></a>
             </div>
           </article>
 
@@ -525,27 +479,24 @@
           <article class="journal-card reveal">
             <div class="journal-card__image-wrap">
               <img
-                src="/images/journal/kernloses-raeucherwerk/inline-1.jpg"
+                src="/images/journal/kernloses-raeucherwerk/inline-1.jpeg"
                 alt="Kernlos. Botanisch."
               />
             </div>
             <div class="journal-card__body">
-              <h3 class="journal-card__title" data-i18n="journal.card2.title">
-                Kernlos. Botanisch.
-              </h3>
+              <h3
+                class="journal-card__title"
+                data-i18n="journal.card2.title"
+              ></h3>
               <p
                 class="journal-card__excerpt"
                 data-i18n="journal.card2.excerpt"
-              >
-                Was in einem Far Shore Räucherstäbchen steckt – und was nicht.
-                Kein Bambus, kein DPG, keine synthetischen Duftöle...
-              </p>
+              ></p>
               <a
                 href="/journal/kernloses-raeucherwerk/"
                 class="journal-card__read-more"
                 data-i18n="journal.read_more"
-                >Weiterlesen &rarr;</a
-              >
+              ></a>
             </div>
           </article>
 
@@ -558,22 +509,19 @@
               />
             </div>
             <div class="journal-card__body">
-              <h3 class="journal-card__title" data-i18n="journal.card3.title">
-                Die Kunst des langsamen Räucherwerks
-              </h3>
+              <h3
+                class="journal-card__title"
+                data-i18n="journal.card3.title"
+              ></h3>
               <p
                 class="journal-card__excerpt"
                 data-i18n="journal.card3.excerpt"
-              >
-                Gepresst, von Hand in ätherische Öle getaucht und langsam an der
-                Luft gereift. So entsteht ein Far Shore Stäbchen...
-              </p>
+              ></p>
               <a
                 href="/journal/handwerk-raeucherwerk/"
                 class="journal-card__read-more"
                 data-i18n="journal.read_more"
-                >Weiterlesen &rarr;</a
-              >
+              ></a>
             </div>
           </article>
 
@@ -586,22 +534,19 @@
               />
             </div>
             <div class="journal-card__body">
-              <h3 class="journal-card__title" data-i18n="journal.card4.title">
-                Das Far Shore Ritual
-              </h3>
+              <h3
+                class="journal-card__title"
+                data-i18n="journal.card4.title"
+              ></h3>
               <p
                 class="journal-card__excerpt"
                 data-i18n="journal.card4.excerpt"
-              >
-                Eine Landschaft wählen, sie bewahren, sie entzünden. Vier
-                Schritte zu einem 30-minütigen Ritual...
-              </p>
+              ></p>
               <a
                 href="/journal/far-shore-ritual/"
                 class="journal-card__read-more"
                 data-i18n="journal.read_more"
-                >Weiterlesen &rarr;</a
-              >
+              ></a>
             </div>
           </article>
         </div>
@@ -619,12 +564,8 @@
           class="contact__logo"
         />
 
-        <h3 class="contact__headline reveal" data-i18n="contact.headline">
-          Erreiche das Ufer.
-        </h3>
-        <p class="contact__poetry reveal" data-i18n="contact.poetry">
-          Wir lesen jede Nachricht. Wir antworten mit Sorgfalt.
-        </p>
+        <h3 class="contact__headline reveal" data-i18n="contact.headline"></h3>
+        <p class="contact__poetry reveal" data-i18n="contact.poetry"></p>
 
         <div class="contact__divider" aria-hidden="true"></div>
 
@@ -646,7 +587,6 @@
                   type="text"
                   name="name"
                   data-i18n-placeholder="contact.name.placeholder"
-                  placeholder="Dein Name"
                   required
                   autocomplete="name"
                 />
@@ -656,7 +596,6 @@
                   type="email"
                   name="email"
                   data-i18n-placeholder="contact.email.placeholder"
-                  placeholder="E-Mail-Adresse"
                   required
                   autocomplete="email"
                 />
@@ -670,21 +609,17 @@
                   disabled
                   selected
                   data-i18n="contact.topic.default"
-                >
-                  Thema
-                </option>
-                <option value="order" data-i18n="contact.topic.order">
-                  Bestellanfrage
-                </option>
-                <option value="wholesale" data-i18n="contact.topic.wholesale">
-                  Großhandel &amp; Händler
-                </option>
-                <option value="press" data-i18n="contact.topic.press">
-                  Presse &amp; Zusammenarbeit
-                </option>
-                <option value="general" data-i18n="contact.topic.general">
-                  Allgemeines
-                </option>
+                ></option>
+                <option value="order" data-i18n="contact.topic.order"></option>
+                <option
+                  value="wholesale"
+                  data-i18n="contact.topic.wholesale"
+                ></option>
+                <option value="press" data-i18n="contact.topic.press"></option>
+                <option
+                  value="general"
+                  data-i18n="contact.topic.general"
+                ></option>
               </select>
               <svg
                 class="contact__select-arrow"
@@ -707,33 +642,23 @@
               <textarea
                 name="message"
                 data-i18n-placeholder="contact.msg.placeholder"
-                placeholder="Deine Nachricht"
                 required
               ></textarea>
             </div>
 
             <div class="contact__actions">
-              <span class="contact__note" data-i18n="contact.note"
-                >Wir antworten innerhalb von 2 Werktagen.</span
-              >
+              <span class="contact__note" data-i18n="contact.note"></span>
               <button
                 type="submit"
                 class="contact__submit"
                 data-i18n="contact.submit"
-              >
-                Senden
-              </button>
+              ></button>
             </div>
           </form>
 
           <div class="contact__success" id="contactSuccess" aria-live="polite">
             <div class="contact__divider" style="margin-inline: auto"></div>
-            <p data-i18n="contact.success">
-              Deine Nachricht ist unterwegs.<br />
-              <span style="opacity: 0.5; font-size: var(--text-base)"
-                >Wir melden uns in Kürze.</span
-              >
-            </p>
+            <p data-i18n="contact.success"></p>
           </div>
         </div>
       </div>

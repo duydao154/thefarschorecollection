@@ -1,316 +1,350 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Kein Bambuskern, kein DPG, keine synthetischen Duftöle. Was kernloses, botanisches Räucherwerk ausmacht – und woran du es erkennst.">
-  <!-- Focus keyword: kernlose Räucherstäbchen — secondary: Räucherstäbchen ohne Bambus, natürliche Räucherstäbchen, DPG Räucherstäbchen -->
-  <title>Kernloses Räucherwerk: Warum ohne Bambus besser duftet</title>
-  <link rel="icon" type="image/png" href="/images/logo/logo_symbol.png">
-  <link rel="canonical" href="/journal/kernloses-raeucherwerk/">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Kein Bambuskern, kein DPG, keine synthetischen Duftöle. Was kernloses, botanisches Räucherwerk ausmacht – und woran du es erkennst."
+    />
+    <!-- Focus keyword: kernlose Räucherstäbchen — secondary: Räucherstäbchen ohne Bambus, natürliche Räucherstäbchen, DPG Räucherstäbchen -->
+    <title>Kernloses Räucherwerk: Warum ohne Bambus besser duftet</title>
+    <link rel="icon" type="image/png" href="/images/logo/logo_symbol.png" />
+    <link rel="canonical" href="/journal/kernloses-raeucherwerk/" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="/css/reset.css">
-  <link rel="stylesheet" href="/css/tokens.css">
-  <link rel="stylesheet" href="/css/typography.css">
-  <link rel="stylesheet" href="/css/layout.css">
-  <link rel="stylesheet" href="/css/animations.css">
-  <link rel="stylesheet" href="/css/nav.css">
-  <link rel="stylesheet" href="/css/footer.css">
-  <link rel="stylesheet" href="/css/article.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/tokens.css" />
+    <link rel="stylesheet" href="/css/typography.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/animations.css" />
+    <link rel="stylesheet" href="/css/nav.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/article.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav
+      class="site-nav site-nav--scrolled"
+      role="navigation"
+      data-i18n-aria="nav.aria"
+    >
+      <div class="site-nav__inner">
+        <a href="/" class="site-nav__wordmark" aria-label="Far Shore home">
+          <img
+            src="/images/logo/logo_horizontal.png"
+            alt="Far Shore"
+            class="site-nav__logo"
+          />
+        </a>
+        <ul class="site-nav__links" role="list">
+          <li>
+            <a
+              href="/#collection"
+              class="site-nav__link"
+              data-i18n="nav.shop"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="/#journal"
+              class="site-nav__link"
+              data-i18n="nav.journal"
+            ></a>
+          </li>
+          <li>
+            <a href="/#ritual" class="site-nav__link" data-i18n="nav.story"></a>
+          </li>
+          <li>
+            <a
+              href="/#contact"
+              class="site-nav__link"
+              data-i18n="nav.contact"
+            ></a>
+          </li>
+          <li><button class="lang-toggle" id="langToggle">EN</button></li>
+        </ul>
+        <button class="site-nav__hamburger" data-i18n-aria="nav.open">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
 
-  <!-- NAV -->
-  <nav class="site-nav site-nav--scrolled" role="navigation" aria-label="Hauptnavigation">
-    <div class="site-nav__inner">
-      <a href="/" class="site-nav__wordmark" aria-label="Far Shore home">
-        <img src="/images/logo/logo_horizontal.png" alt="Far Shore" class="site-nav__logo">
-      </a>
-      <ul class="site-nav__links" role="list">
-        <li><a href="/#collection" class="site-nav__link" data-i18n="nav.shop">Shop</a></li>
-        <li><a href="/#journal" class="site-nav__link" data-i18n="nav.journal">Journal</a></li>
-        <li><a href="/#ritual" class="site-nav__link" data-i18n="nav.story">Unsere Geschichte</a></li>
-        <li><a href="/#contact" class="site-nav__link" data-i18n="nav.contact">Kontakt</a></li>
-        <li><button class="lang-toggle" id="langToggle">EN</button></li>
-      </ul>
-      <button class="site-nav__hamburger" data-i18n-aria="nav.open" aria-label="Menü öffnen">
-        <span></span><span></span><span></span>
+    <!-- Mobile overlay -->
+    <div
+      class="site-nav__overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Navigationsmenü"
+    >
+      <button class="site-nav__overlay-close" data-i18n-aria="nav.close">
+        &times;
+      </button>
+      <nav>
+        <a
+          href="/#collection"
+          class="site-nav__overlay-link"
+          data-i18n="nav.shop"
+        ></a>
+        <a
+          href="/#journal"
+          class="site-nav__overlay-link"
+          data-i18n="nav.journal"
+        ></a>
+        <a
+          href="/#ritual"
+          class="site-nav__overlay-link"
+          data-i18n="nav.story"
+        ></a>
+        <a
+          href="/#contact"
+          class="site-nav__overlay-link"
+          data-i18n="nav.contact"
+        ></a>
+      </nav>
+      <button class="lang-toggle lang-toggle--overlay" id="langToggleOverlay">
+        EN
       </button>
     </div>
-  </nav>
 
-  <!-- Mobile overlay -->
-  <div class="site-nav__overlay" role="dialog" aria-modal="true" aria-label="Navigationsmenü">
-    <button class="site-nav__overlay-close" data-i18n-aria="nav.close" aria-label="Menü schließen">&times;</button>
-    <nav>
-      <a href="/#collection" class="site-nav__overlay-link" data-i18n="nav.shop">Shop</a>
-      <a href="/#journal" class="site-nav__overlay-link" data-i18n="nav.journal">Journal</a>
-      <a href="/#ritual" class="site-nav__overlay-link" data-i18n="nav.story">Unsere Geschichte</a>
-      <a href="/#contact" class="site-nav__overlay-link" data-i18n="nav.contact">Kontakt</a>
-    </nav>
-    <button class="lang-toggle lang-toggle--overlay" id="langToggleOverlay">EN</button>
-  </div>
+    <!-- ARTICLE HERO -->
+    <header class="article-hero">
+      <div class="article-hero__inner">
+        <a href="/#journal" class="article-hero__back">
+          <svg viewBox="0 0 16 16" aria-hidden="true">
+            <polyline points="10,4 6,8 10,12" />
+          </svg>
+          <span data-i18n="article.back"></span>
+        </a>
+        <span
+          class="article-hero__label"
+          data-i18n="kernloses-raeucherwerk.label"
+        ></span>
+        <h1
+          class="article-hero__title"
+          data-i18n="kernloses-raeucherwerk.title"
+        ></h1>
+        <div class="article-hero__divider" aria-hidden="true"></div>
+        <p
+          class="article-hero__meta"
+          data-i18n="kernloses-raeucherwerk.meta"
+        ></p>
+      </div>
+    </header>
 
+    <!-- FEATURE IMAGE -->
+    <img
+      class="article-image"
+      src="/images/journal/kernloses-raeucherwerk/inline-1.jpeg"
+      alt="Zwei Räucherstäbchen im Vergleich: eines mit sichtbarem Bambuskern, eines vollständig kernlos"
+    />
 
-  <!-- ARTICLE HERO -->
-  <header class="article-hero">
-    <div class="article-hero__inner">
-      <a href="/#journal" class="article-hero__back">
-        <svg viewBox="0 0 16 16" aria-hidden="true"><polyline points="10,4 6,8 10,12"/></svg>
-        <span data-i18n="article.back">Notizen von der Küste</span>
-      </a>
-      <span class="article-hero__label" data-lang="de">Handwerk &amp; Zutaten</span>
-      <span class="article-hero__label" data-lang="en" hidden>Craft &amp; Ingredients</span>
-      <h1 class="article-hero__title" data-lang="de">Kernlos. Botanisch. Ehrlich. Was in einem Far Shore Räucherstäbchen steckt – und was nicht</h1>
-      <h1 class="article-hero__title" data-lang="en" hidden>Coreless. Botanical. Honest. What's in a Far Shore incense stick — and what isn't</h1>
-      <div class="article-hero__divider" aria-hidden="true"></div>
-      <p class="article-hero__meta" data-lang="de">3 Min. Lesezeit</p>
-      <p class="article-hero__meta" data-lang="en" hidden>3 min read</p>
-    </div>
-  </header>
+    <!-- ARTICLE BODY -->
+    <main class="article-body" id="main-content">
+      <div class="article-body__inner">
+        <p data-i18n="kernloses-raeucherwerk.body1" class="article-lead"></p>
 
-  <!-- FEATURE IMAGE -->
-  <img class="article-image" src="/images/journal/kernloses-raeucherwerk/inline-1.jpg" alt="Zwei Räucherstäbchen im Vergleich: eines mit sichtbarem Bambuskern, eines vollständig kernlos">
+        <h2 data-i18n="kernloses-raeucherwerk.body2"></h2>
 
+        <p data-i18n="kernloses-raeucherwerk.body3"></p>
 
+        <p data-i18n="kernloses-raeucherwerk.body4"></p>
 
-  <!-- ARTICLE BODY -->
-  <main class="article-body" id="main-content">
-    <div class="article-body__inner">
+        <img
+          class="journal-image"
+          data-i18n-alt="kernloses-raeucherwerk.alt1"
+          src="/images/journal/kernloses-raeucherwerk/inline-1.jpeg"
+        />
 
-      <!-- ── GERMAN ── -->
-      <div data-lang="de">
-        <p class="article-lead">
-          Wer je ein billiges Räucherstäbchen angezündet hat, kennt das Ergebnis: ein
-          süßlich-schwerer Geruch, dichter Rauch, ein schwarzer Rand am Halter. Das liegt selten
-          am Duft. Meistens liegt es am Stäbchen selbst.
-        </p>
+        <h2 data-i18n="kernloses-raeucherwerk.body5"></h2>
 
-        <h2>Wie die meisten Räucherstäbchen gebaut sind</h2>
-
-        <img src="/images/journal/kernloses-raeucherwerk/inline-1.jpg" alt="Links: Räucherstäbchen mit sichtbarem Bambuskern. Rechts: ein Far Shore Stäbchen, kernlos durch und durch" style="width: 50%; margin-inline: auto;">
-
-        <p>
-          Das typische Räucherstäbchen besteht aus einem dünnen Bambusstab, der mit einer Paste
-          aus Holzmehl und Bindemittel ummantelt wird. Danach wird der Rohling oft in eine
-          Mischung aus Duftöl und Lösungsmittel getaucht. Ein häufig verwendetes Lösungsmittel
-          ist DPG (Dipropylenglykol). Es hilft, synthetische Duftöle gleichmäßig zu verteilen und
-          eventuell sie günstig zu machen.
-        </p>
-
-        <p>
-          Das Problem ist schlicht: Beim Anzünden verbrennt nicht nur der Duft. Es verbrennt auch
-          den Bambus. Das Holz des Kerns erzeugt zusätzlichen Rauch, der mit dem eigentlichen
-          Aroma nichts zu tun hat. Und synthetische Duftstoffe wirken beim Verbrennen oft schwerer
-          und aufdringlicher, als sie in der Flasche riechen.
-        </p>
-
-        <h2>Was ein Far Shore Stäbchen ausmacht</h2>
-
-        <img src="/images/journal/kernloses-raeucherwerk/inline-2.jpg" alt="Natürliche Holzpulver, Pflanzenharz und reines ätherisches Öl neben einem Far Shore Stäbchen" style="aspect-ratio: 3 / 3; width: 50%; margin-inline: auto;">
-
-        <p>Ein Far Shore Räucherstäbchen hat keinen Kern. Es besteht vollständig aus dem, was du riechen sollst:</p>
+        <p data-i18n="kernloses-raeucherwerk.body6"></p>
 
         <ul>
-          <li><strong>Natürliche Holzpulver</strong> – die Basis, die gleichmäßig glimmt</li>
-          <li><strong>Pflanzenharze</strong> – für Tiefe und einen langen, ruhigen Nachklang</li>
-          <li><strong>Reine ätherische Öle</strong> – für die Duftnoten jeder Landschaft</li>
+          <li data-i18n="kernloses-raeucherwerk.body7"></li>
+          <li data-i18n="kernloses-raeucherwerk.body8"></li>
+          <li data-i18n="kernloses-raeucherwerk.body9"></li>
         </ul>
 
-        <p><strong>Kein Bambus. Kein DPG. Keine synthetischen Duftöle.</strong></p>
+        <p data-i18n="kernloses-raeucherwerk.body10"></p>
 
-        <p>
-          Weil nichts anderes verbrennt als das Duftmaterial selbst, bleibt der Rauch fein und
-          hell. Der Duft steigt auf und verteilt sich im Raum, statt schwer darin zu hängen. Und
-          am Ende bleibt nichts zurück als ein feiner Strich Asche.
-        </p>
+        <p data-i18n="kernloses-raeucherwerk.body11"></p>
 
-        <h2>Keine neue Idee – eine alte</h2>
+        <img
+          class="journal-image"
+          data-i18n-alt="kernloses-raeucherwerk.alt2"
+          src="/images/journal/kernloses-raeucherwerk/inline-2.jpg"
+          style="aspect-ratio: 3 / 3"
+        />
 
-        <p>
-          Kernloses Räucherwerk ist keine Erfindung unserer Zeit. In Japan und China ist es seit
-          Jahrhunderten die bevorzugte Form für Tempel, Teezeremonie und Meditation. Der
-          Bambuskern kam später als Abkürzung für die Massenproduktion. Wir gehen den Weg einfach
-          zurück.
-        </p>
+        <h2 data-i18n="kernloses-raeucherwerk.body12"></h2>
 
-        <h2>So erkennst du echtes kernloses Räucherwerk</h2>
+        <p data-i18n="kernloses-raeucherwerk.body13"></p>
+
+        <h2 data-i18n="kernloses-raeucherwerk.body14"></h2>
 
         <ol>
-          <li><strong>Kein Holzstab am Ende.</strong> Das Stäbchen ist von Anfang bis Ende einheitlich.</li>
-          <li><strong>Matte Oberfläche.</strong> Glänzende oder ölige Stäbchen deuten auf viel zugesetztes Duftöl hin.</li>
-          <li><strong>Heller, feiner Rauch.</strong> Dichter, dunkler Rauch ist ein Hinweis auf Füllstoffe.</li>
-          <li><strong>Transparente Zutaten.</strong> Seriöse Hersteller nennen, woraus ihr Räucherwerk besteht.</li>
+          <li data-i18n="kernloses-raeucherwerk.body15"></li>
+          <li data-i18n="kernloses-raeucherwerk.body16"></li>
+          <li data-i18n="kernloses-raeucherwerk.body17"></li>
+          <li data-i18n="kernloses-raeucherwerk.body18"></li>
         </ol>
 
-        <h2>Ein ehrliches Wort zum Rauch</h2>
+        <h2 data-i18n="kernloses-raeucherwerk.body19"></h2>
 
-        <p>
-          Jedes Räucherwerk erzeugt Rauch – auch unseres. Deshalb empfehlen wir, beim Räuchern
-          gelegentlich zu lüften und nie in einem geschlossenen, kleinen Raum mehrere Stäbchen
-          hintereinander zu brennen. Unser Versprechen ist nicht, dass Rauch harmlos ist. Unser
-          Versprechen ist, dass du genau weißt, was brennt.
-        </p>
-      </div>
+        <p data-i18n="kernloses-raeucherwerk.body20"></p>
 
-      <!-- ── ENGLISH ── -->
-      <div data-lang="en" hidden>
-        <p class="article-lead">
-          Anyone who has lit a cheap incense stick knows the result: a heavy, sweet smell, thick
-          smoke, a black ring on the holder. That's rarely the fragrance's fault. Usually it's the
-          stick itself.
-        </p>
-
-        <h2>How most incense is made</h2>
-
-        <img src="/images/journal/kernloses-raeucherwerk/inline-1.jpg" alt="Left: an incense stick with a visible bamboo core. Right: a Far Shore stick, coreless through and through" style="width: 50%; margin-inline: auto;">
-
-        <p>
-          The typical incense stick is a thin bamboo rod coated in a paste of wood dust and
-          binder. The blank is then often dipped in a blend of fragrance oil and solvent. A
-          common solvent is DPG (dipropylene glycol). It spreads synthetic fragrance evenly — and
-          keeps it cheap.
-        </p>
-
-        <p>
-          The problem is simple: when you light it, the fragrance isn't the only thing burning.
-          So is the bamboo. The core adds smoke that has nothing to do with the aroma. And
-          synthetic fragrance often reads heavier and more insistent when burned than it does in
-          the bottle.
-        </p>
-
-        <h2>What makes a Far Shore stick different</h2>
-
-        <img src="/images/journal/kernloses-raeucherwerk/inline-2.jpg" alt="Natural wood powder, plant resin and pure essential oil beside a Far Shore stick" style="aspect-ratio: 3 / 3; width: 50%; margin-inline: auto;">
-
-        <p>A Far Shore stick has no core. It is made entirely of what you're meant to smell:</p>
-
-        <ul>
-          <li><strong>Natural wood powders</strong> — the base, which smoulders evenly</li>
-          <li><strong>Plant resins</strong> — for depth and a long, quiet finish</li>
-          <li><strong>Pure essential oils</strong> — for the notes of each landscape</li>
-        </ul>
-
-        <p><strong>No bamboo. No DPG. No synthetic fragrance oils.</strong></p>
-
-        <p>
-          Because nothing burns but the aromatic material itself, the smoke stays fine and pale.
-          The scent rises and moves through the room instead of hanging in it. And what remains
-          is a single thin line of ash.
-        </p>
-
-        <h2>Not a new idea — an old one</h2>
-
-        <p>
-          Coreless incense isn't a modern invention. In Japan and China it has long been the
-          preferred form for temples, tea ceremony and meditation. The bamboo core came later — a
-          shortcut for mass production. We simply walk the path back.
-        </p>
-
-        <h2>How to recognise true coreless incense</h2>
-
-        <ol>
-          <li><strong>No wooden stem at the end.</strong> The stick is uniform from tip to tip.</li>
-          <li><strong>A matte surface.</strong> Glossy or oily sticks suggest a lot of added fragrance oil.</li>
-          <li><strong>Pale, fine smoke.</strong> Thick, dark smoke points to fillers.</li>
-          <li><strong>Transparent ingredients.</strong> Serious makers tell you what their incense contains.</li>
-        </ol>
-
-        <h2>An honest word about smoke</h2>
-
-        <p>
-          All incense makes smoke — ours too. So we suggest airing the room now and then, and
-          never burning several sticks back to back in a small, closed space. Our promise isn't
-          that smoke is harmless. Our promise is that you know exactly what is burning.
-        </p>
-      </div>
-
-      <div class="article-cta">
-        <p data-lang="de">Entdecke, welche Landschaft zu dir passt.</p>
-        <p data-lang="en" hidden>Discover which landscape suits you.</p>
-        <div class="article-cta__actions">
-          <!-- TODO: point to the live Amazon storefront/collection page once available -->
-          <a class="article-btn article-btn--solid" href="https://www.amazon.de" target="_blank" rel="noopener noreferrer" data-lang="de">Entdecke die vier Landschaften &rarr;</a>
-          <a class="article-btn article-btn--solid" href="https://www.amazon.de" target="_blank" rel="noopener noreferrer" data-lang="en" hidden>Discover the Four Landscapes &rarr;</a>
-          <a class="article-btn" href="/journal/handwerk-raeucherwerk/" data-lang="de">Wie ein Stäbchen entsteht &rarr;</a>
-          <a class="article-btn" href="/journal/handwerk-raeucherwerk/" data-lang="en" hidden>How a Stick is Made &rarr;</a>
+        <div class="article-cta">
+          <p data-i18n="kernloses-raeucherwerk.cta"></p>
+          <div class="article-cta__actions">
+            <!-- TODO: point to the live Amazon storefront/collection page once available -->
+            <a
+              class="article-btn article-btn--solid"
+              href="https://www.amazon.de"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-i18n="kernloses-raeucherwerk.link1"
+            ></a>
+            <a
+              class="article-btn"
+              href="/journal/handwerk-raeucherwerk/"
+              data-i18n="kernloses-raeucherwerk.link2"
+            ></a>
+          </div>
         </div>
       </div>
+    </main>
 
-    </div>
-  </main>
+    <!-- MORE FROM THE JOURNAL -->
+    <section class="article-more" aria-label="More from the journal">
+      <div class="article-more__inner">
+        <h2 class="article-more__heading" data-i18n="article.more"></h2>
+        <div class="article-more__grid">
+          <a href="/journal/handwerk-raeucherwerk/" class="article-more__card">
+            <img
+              class="article-more__card-image"
+              src="/images/journal/handwerk-raeucherwerk/hero.jpg"
+              alt="Die Kunst des langsamen Räucherwerks"
+            />
+            <div class="article-more__card-body">
+              <h3
+                class="article-more__card-title"
+                data-i18n="journal.card3.title"
+              ></h3>
+              <span
+                class="article-more__card-link"
+                data-i18n="article.read_more"
+              ></span>
+            </div>
+          </a>
 
-
-  <!-- MORE FROM THE JOURNAL -->
-  <section class="article-more" aria-label="More from the journal">
-    <div class="article-more__inner">
-      <h2 class="article-more__heading" data-i18n="article.more">Weiterlesen</h2>
-      <div class="article-more__grid">
-
-        <a href="/journal/handwerk-raeucherwerk/" class="article-more__card">
-          <img class="article-more__card-image" src="/images/journal/handwerk-raeucherwerk/hero.jpg" alt="Die Kunst des langsamen Räucherwerks">
-          <div class="article-more__card-body">
-            <h3 class="article-more__card-title" data-lang="de">Die Kunst des langsamen Räucherwerks</h3>
-            <h3 class="article-more__card-title" data-lang="en" hidden>The Art of Slow Incense</h3>
-            <span class="article-more__card-link" data-i18n="article.read_more">Mehr lesen &rarr;</span>
-          </div>
-        </a>
-
-        <a href="/journal/die-ferne-kueste/" class="article-more__card">
-          <img class="article-more__card-image" src="/images/journal/die-ferne-kueste/hero.jpg" alt="Die ferne Küste">
-          <div class="article-more__card-body">
-            <h3 class="article-more__card-title" data-lang="de">Die ferne Küste: Die Geschichte hinter Far Shore</h3>
-            <h3 class="article-more__card-title" data-lang="en" hidden>The Far Shore: The Story Behind the Name</h3>
-            <span class="article-more__card-link" data-i18n="article.read_more">Mehr lesen &rarr;</span>
-          </div>
-        </a>
-
+          <a href="/journal/die-ferne-kueste/" class="article-more__card">
+            <img
+              class="article-more__card-image"
+              src="/images/journal/die-ferne-kueste/hero.jpg"
+              alt="Die ferne Küste"
+            />
+            <div class="article-more__card-body">
+              <h3
+                class="article-more__card-title"
+                data-i18n="journal.card1.title"
+              ></h3>
+              <span
+                class="article-more__card-link"
+                data-i18n="article.read_more"
+              ></span>
+            </div>
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- FOOTER -->
+    <footer class="site-footer" id="footer" role="contentinfo">
+      <div class="site-footer__inner">
+        <div class="site-footer__wordmark">
+          <img
+            src="/images/logo/logo_vertical.png"
+            alt="Far Shore"
+            class="site-footer__logo"
+          />
+        </div>
+        <div class="site-footer__socials" aria-label="Social media links">
+          <a href="#" class="site-footer__social-link" aria-label="Instagram">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle
+                cx="17.5"
+                cy="6.5"
+                r="0.5"
+                fill="currentColor"
+                stroke="none"
+              />
+            </svg>
+          </a>
+          <a href="#" class="site-footer__social-link" aria-label="Pinterest">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.03-2.83.19-.76 1.26-5.33 1.26-5.33s-.32-.64-.32-1.59c0-1.49.86-2.6 1.94-2.6.91 0 1.35.68 1.35 1.5 0 .92-.58 2.29-.88 3.56-.25 1.06.53 1.93 1.57 1.93 1.88 0 3.14-2.4 3.14-5.24 0-2.16-1.46-3.68-3.55-3.68-2.42 0-3.84 1.82-3.84 3.7 0 .73.28 1.51.63 1.94.07.08.08.15.06.23-.06.27-.21.85-.24.97-.04.16-.13.19-.3.12-1.13-.53-1.84-2.18-1.84-3.51 0-2.85 2.07-5.47 5.97-5.47 3.13 0 5.57 2.23 5.57 5.21 0 3.11-1.96 5.61-4.67 5.61-.91 0-1.77-.47-2.06-1.03l-.56 2.09c-.2.78-.75 1.75-1.12 2.34.84.26 1.73.4 2.65.4 5.52 0 10-4.48 10-10S17.52 2 12 2z"
+              />
+            </svg>
+          </a>
+        </div>
+        <div class="site-footer__divider"></div>
+        <div class="site-footer__newsletter">
+          <p
+            class="site-footer__newsletter-label"
+            data-i18n="footer.newsletter.label"
+          ></p>
+          <form
+            class="site-footer__newsletter-form"
+            action="#"
+            method="post"
+            novalidate
+          >
+            <input
+              class="site-footer__newsletter-input"
+              type="email"
+              name="email"
+              data-i18n-placeholder="footer.newsletter.placeholder"
+              aria-label="E-Mail-Adresse"
+              required
+            />
+            <button
+              class="site-footer__newsletter-btn"
+              type="submit"
+              data-i18n="footer.newsletter.btn"
+            ></button>
+          </form>
+        </div>
+        <div class="site-footer__divider"></div>
+        <p class="site-footer__legal" data-i18n="footer.legal"></p>
+      </div>
+    </footer>
 
-  <!-- FOOTER -->
-  <footer class="site-footer" id="footer" role="contentinfo">
-    <div class="site-footer__inner">
-      <div class="site-footer__wordmark">
-        <img src="/images/logo/logo_vertical.png" alt="Far Shore" class="site-footer__logo">
-      </div>
-      <div class="site-footer__socials" aria-label="Social media links">
-        <a href="#" class="site-footer__social-link" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-            <circle cx="12" cy="12" r="4"/>
-            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
-          </svg>
-        </a>
-        <a href="#" class="site-footer__social-link" aria-label="Pinterest">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.03-2.83.19-.76 1.26-5.33 1.26-5.33s-.32-.64-.32-1.59c0-1.49.86-2.6 1.94-2.6.91 0 1.35.68 1.35 1.5 0 .92-.58 2.29-.88 3.56-.25 1.06.53 1.93 1.57 1.93 1.88 0 3.14-2.4 3.14-5.24 0-2.16-1.46-3.68-3.55-3.68-2.42 0-3.84 1.82-3.84 3.7 0 .73.28 1.51.63 1.94.07.08.08.15.06.23-.06.27-.21.85-.24.97-.04.16-.13.19-.3.12-1.13-.53-1.84-2.18-1.84-3.51 0-2.85 2.07-5.47 5.97-5.47 3.13 0 5.57 2.23 5.57 5.21 0 3.11-1.96 5.61-4.67 5.61-.91 0-1.77-.47-2.06-1.03l-.56 2.09c-.2.78-.75 1.75-1.12 2.34.84.26 1.73.4 2.65.4 5.52 0 10-4.48 10-10S17.52 2 12 2z"/>
-          </svg>
-        </a>
-      </div>
-      <div class="site-footer__divider"></div>
-      <div class="site-footer__newsletter">
-        <p class="site-footer__newsletter-label" data-i18n="footer.newsletter.label">Bleibe in Kontakt.</p>
-        <form class="site-footer__newsletter-form" action="#" method="post" novalidate>
-          <input class="site-footer__newsletter-input" type="email" name="email"
-            data-i18n-placeholder="footer.newsletter.placeholder"
-            placeholder="Deine E-Mail-Adresse" aria-label="E-Mail-Adresse" required>
-          <button class="site-footer__newsletter-btn" type="submit" data-i18n="footer.newsletter.btn">Abonnieren</button>
-        </form>
-      </div>
-      <div class="site-footer__divider"></div>
-      <p class="site-footer__legal" data-i18n="footer.legal">&copy; 2025 Far Shore. Alle Rechte vorbehalten.</p>
-    </div>
-  </footer>
-
-  <script type="module" src="/js/i18n.js"></script>
-  <script type="module" src="/js/nav.js"></script>
-  <script type="module" src="/js/scroll-reveal.js"></script>
-</body>
+    <script type="module" src="/js/i18n.js"></script>
+    <script type="module" src="/js/nav.js"></script>
+    <script type="module" src="/js/scroll-reveal.js"></script>
+  </body>
 </html>
