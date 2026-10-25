@@ -1,363 +1,565 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Far Shore ist kein Ort auf einer Karte. Die Geschichte eines verbannten Dichters, einer Insel am Rand der Welt und des Rauchs, der ihn heimbrachte.">
-  <!-- Focus keyword: Far Shore Bedeutung — secondary: Wabi-Sabi Räucherwerk, Su Dongpo, Achtsamkeit Ritual, Räucherstäbchen Meditation -->
-  <title>Die ferne Küste: Die Geschichte hinter Far Shore</title>
-  <link rel="icon" type="image/png" href="/images/logo/logo_symbol.png">
-  <link rel="canonical" href="/journal/die-ferne-kueste/">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Far Shore ist kein Ort auf einer Karte. Die Geschichte eines verbannten Dichters, einer Insel am Rand der Welt und des Rauchs, der ihn heimbrachte."
+    />
+    <!-- Focus keyword: Far Shore Bedeutung — secondary: Wabi-Sabi Räucherwerk, Su Dongpo, Achtsamkeit Ritual, Räucherstäbchen Meditation -->
+    <title>Die ferne Küste: Die Geschichte hinter Far Shore</title>
+    <link rel="icon" type="image/png" href="/images/logo/logo_symbol.png" />
+    <link rel="canonical" href="/journal/die-ferne-kueste/" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="/css/reset.css">
-  <link rel="stylesheet" href="/css/tokens.css">
-  <link rel="stylesheet" href="/css/typography.css">
-  <link rel="stylesheet" href="/css/layout.css">
-  <link rel="stylesheet" href="/css/animations.css">
-  <link rel="stylesheet" href="/css/nav.css">
-  <link rel="stylesheet" href="/css/footer.css">
-  <link rel="stylesheet" href="/css/article.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/tokens.css" />
+    <link rel="stylesheet" href="/css/typography.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/animations.css" />
+    <link rel="stylesheet" href="/css/nav.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/article.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav
+      class="site-nav site-nav--scrolled"
+      role="navigation"
+      aria-label="Hauptnavigation"
+    >
+      <div class="site-nav__inner">
+        <a href="/" class="site-nav__wordmark" aria-label="Far Shore home">
+          <img
+            src="/images/logo/logo_horizontal.png"
+            alt="Far Shore"
+            class="site-nav__logo"
+          />
+        </a>
+        <ul class="site-nav__links" role="list">
+          <li>
+            <a href="/#collection" class="site-nav__link" data-i18n="nav.shop"
+              >Shop</a
+            >
+          </li>
+          <li>
+            <a href="/#journal" class="site-nav__link" data-i18n="nav.journal"
+              >Journal</a
+            >
+          </li>
+          <li>
+            <a href="/#ritual" class="site-nav__link" data-i18n="nav.story"
+              >Unsere Geschichte</a
+            >
+          </li>
+          <li>
+            <a href="/#contact" class="site-nav__link" data-i18n="nav.contact"
+              >Kontakt</a
+            >
+          </li>
+          <li><button class="lang-toggle" id="langToggle">EN</button></li>
+        </ul>
+        <button
+          class="site-nav__hamburger"
+          data-i18n-aria="nav.open"
+          aria-label="Menü öffnen"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
 
-  <!-- NAV -->
-  <nav class="site-nav site-nav--scrolled" role="navigation" aria-label="Hauptnavigation">
-    <div class="site-nav__inner">
-      <a href="/" class="site-nav__wordmark" aria-label="Far Shore home">
-        <img src="/images/logo/logo_horizontal.png" alt="Far Shore" class="site-nav__logo">
-      </a>
-      <ul class="site-nav__links" role="list">
-        <li><a href="/#collection" class="site-nav__link" data-i18n="nav.shop">Shop</a></li>
-        <li><a href="/#journal" class="site-nav__link" data-i18n="nav.journal">Journal</a></li>
-        <li><a href="/#ritual" class="site-nav__link" data-i18n="nav.story">Unsere Geschichte</a></li>
-        <li><a href="/#contact" class="site-nav__link" data-i18n="nav.contact">Kontakt</a></li>
-        <li><button class="lang-toggle" id="langToggle">EN</button></li>
-      </ul>
-      <button class="site-nav__hamburger" data-i18n-aria="nav.open" aria-label="Menü öffnen">
-        <span></span><span></span><span></span>
+    <!-- Mobile overlay -->
+    <div
+      class="site-nav__overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Navigationsmenü"
+    >
+      <button
+        class="site-nav__overlay-close"
+        data-i18n-aria="nav.close"
+        aria-label="Menü schließen"
+      >
+        &times;
+      </button>
+      <nav>
+        <a
+          href="/#collection"
+          class="site-nav__overlay-link"
+          data-i18n="nav.shop"
+          >Shop</a
+        >
+        <a
+          href="/#journal"
+          class="site-nav__overlay-link"
+          data-i18n="nav.journal"
+          >Journal</a
+        >
+        <a href="/#ritual" class="site-nav__overlay-link" data-i18n="nav.story"
+          >Unsere Geschichte</a
+        >
+        <a
+          href="/#contact"
+          class="site-nav__overlay-link"
+          data-i18n="nav.contact"
+          >Kontakt</a
+        >
+      </nav>
+      <button class="lang-toggle lang-toggle--overlay" id="langToggleOverlay">
+        EN
       </button>
     </div>
-  </nav>
 
-  <!-- Mobile overlay -->
-  <div class="site-nav__overlay" role="dialog" aria-modal="true" aria-label="Navigationsmenü">
-    <button class="site-nav__overlay-close" data-i18n-aria="nav.close" aria-label="Menü schließen">&times;</button>
-    <nav>
-      <a href="/#collection" class="site-nav__overlay-link" data-i18n="nav.shop">Shop</a>
-      <a href="/#journal" class="site-nav__overlay-link" data-i18n="nav.journal">Journal</a>
-      <a href="/#ritual" class="site-nav__overlay-link" data-i18n="nav.story">Unsere Geschichte</a>
-      <a href="/#contact" class="site-nav__overlay-link" data-i18n="nav.contact">Kontakt</a>
-    </nav>
-    <button class="lang-toggle lang-toggle--overlay" id="langToggleOverlay">EN</button>
-  </div>
-
-
-  <!-- ARTICLE HERO -->
-  <header class="article-hero">
-    <div class="article-hero__inner">
-      <a href="/#journal" class="article-hero__back">
-        <svg viewBox="0 0 16 16" aria-hidden="true"><polyline points="10,4 6,8 10,12"/></svg>
-        <span data-i18n="article.back">Notizen von der Küste</span>
-      </a>
-      <span class="article-hero__label" data-lang="de">Geschichte &amp; Bedeutung</span>
-      <span class="article-hero__label" data-lang="en" hidden>Story &amp; Meaning</span>
-      <h1 class="article-hero__title" data-lang="de">Die ferne Küste: Die Geschichte hinter Far Shore</h1>
-      <h1 class="article-hero__title" data-lang="en" hidden>The Far Shore: The Story Behind the Name</h1>
-      <div class="article-hero__divider" aria-hidden="true"></div>
-      <p class="article-hero__meta" data-lang="de">4 Min. Lesezeit</p>
-      <p class="article-hero__meta" data-lang="en" hidden>4 min read</p>
-    </div>
-  </header>
-
-  <!-- FEATURE IMAGE -->
-  <img class="article-image" src="/images/journal/die-ferne-kueste/hero.jpg" alt="Die ferne Küste — Dünen an der Küste Südchinas">
-
-
-
-  <!-- ARTICLE BODY -->
-  <main class="article-body" id="main-content">
-    <div class="article-body__inner">
-
-      <!-- ── GERMAN ── -->
-      <div data-lang="de">
-        <p class="article-lead">
-          Es gibt Orte, die auf keiner Karte stehen. Man erreicht sie nicht über eine Route,
-          sondern über einen Atemzug.
-        </p>
-
-        <p>
-          Far Shore ist einer dieser Orte. Nicht Ziel, sondern Zustand: der stille Rand des
-          Tages, an dem die Gedanken langsamer werden und die Gegenwart genügt. Um zu erklären,
-          woher dieser Name kommt, müssen wir fast tausend Jahre zurückgehen – zu einem Dichter,
-          der alles verlor und dabei etwas fand.
-        </p>
-
-        <h2>Der Dichter am Rand der Welt</h2>
-
-        <img src="/images/journal/die-ferne-kueste/inline-1.jpg" alt="Illustration: ein Gelehrter blickt über die Küste Hainans, begleitet vom Gedicht &bdquo;Kein Ort auf einer Karte&ldquo;" style="aspect-ratio: 1400 / 781; width: 50%; margin-inline: auto;">
-
-        <p>
-          Su Dongpo war einer der größten Dichter, Maler und Kalligraphen der chinesischen
-          Song-Dynastie. Er war auch unbequem. Seine Worte brachten ihm Bewunderung ein, und
-          immer wieder die Verbannung.
-        </p>
-
-        <p>
-          Die letzte führte ihn, schon über sechzig Jahre alt, auf die Insel Hainan. Für den
-          Hof in der Hauptstadt war das der Rand der bekannten Welt: jenseits des Meeres,
-          jenseits der Ordnung, jenseits jeder Rückkehr. Er kam mit wenig an. Einige Bücher.
-          Einen Tuschstein. Seinen Pinsel.
-        </p>
-
-        <p>Und er begann, Räucherwerk herzustellen.</p>
-
-        <p>
-          Die Überlieferung erzählt, dass Su Dongpo aus den Hölzern und Harzen der Insel eigene
-          Mischungen formte und über den Duft schrieb wie über einen Freund. Er brauchte keinen
-          Palast, um zur Ruhe zu kommen. Er brauchte nur einen stillen Morgen, einen faden Rauch
-          und die Aufmerksamkeit, ihm zu folgen.
-        </p>
-
-        <p>Dort, an der fernsten Küste seines Lebens, fand er, was ihm am Hof gefehlt hatte.</p>
-
-        <h2>Die andere Küste</h2>
-
-        <p>
-          In der buddhistischen Gedankenwelt Ostasiens gibt es ein Bild, das diese Geschichte
-          trägt: die andere Küste. Diesseits des Meeres liegen Unruhe, Eile, das ständige Wollen.
-          Jenseits davon liegt Klarheit. Man überquert dieses Meer nicht mit einem Boot. Man
-          überquert es mit dem Geist.
-        </p>
-
-        <p>
-          Far Shore ist unser Name für diese andere Küste. Kein Rückzug aus der Welt, sondern
-          eine Rückkehr zu sich selbst – eine gute halbe Stunde lang, so lange, wie ein Stäbchen
-          brennt.
-        </p>
-
-        <h2>Warum Rauch</h2>
-
-        <img src="/images/journal/die-ferne-kueste/inline-2.jpg" alt="Ein einzelnes Far Shore Stäbchen brennt auf einem Steinteller, ein Buch daneben" style="aspect-ratio: 3 / 3; width: 50%; margin-inline: auto;">
-
-        <p>
-          Der Geruchssinn ist der einzige Sinn, der ohne Umweg über den Thalamus direkt das
-          limbische System erreicht – jenen Teil des Gehirns, der Erinnerung und Gefühl
-          verbindet. Deshalb kann ein Duft uns schneller an einen anderen Ort bringen als jedes
-          Bild.
-        </p>
-
-        <p>
-          In Tempeln, Teehäusern und Studierzimmern Ostasiens wurde Räucherwerk nie als
-          Dekoration verstanden. Es war ein Signal: Das Gewöhnliche pausiert. Jetzt beginnt
-          etwas anderes.
-        </p>
-
-        <h2>Wabi-Sabi: die Schönheit des Unvollkommenen</h2>
-
-        <p>
-          Su Dongpos Leben auf Hainan war alles andere als perfekt. Gerade darin liegt seine
-          Kraft. Die japanische Ästhetik des Wabi-Sabi nennt es die Schönheit des Unvollendeten,
-          Vergänglichen, Ehrlichen: rissige Glasur, verwittertes Holz, Asche, die zu Boden fällt.
-        </p>
-
-        <p>
-          Jedes Detail von Far Shore folgt diesem Gedanken. Ein Stäbchen ohne Kern, das
-          vollständig zu Asche wird. Düfte, die nach Landschaften benannt sind, statt nach
-          Versprechen. Eine Verpackung, die aufbewahrt statt weggeworfen wird.
-        </p>
-
-        <h2>Für wen Far Shore ist</h2>
-
-        <p>
-          Für alle, die Ruhe nicht inszenieren wollen, sondern finden. Für Menschen, die
-          bemerken, wie ein Gegenstand gemacht ist. Die einen Raum lieber schweigen als sprechen
-          hören.
-        </p>
-
-        <p>
-          Du musst nicht auf eine Insel verbannt werden, um die ferne Küste zu erreichen. Du
-          musst nur ein Streichholz anzünden – und bleiben.
-        </p>
+    <!-- ARTICLE HERO -->
+    <header class="article-hero">
+      <div class="article-hero__inner">
+        <a href="/#journal" class="article-hero__back">
+          <svg viewBox="0 0 16 16" aria-hidden="true">
+            <polyline points="10,4 6,8 10,12" />
+          </svg>
+          <span data-i18n="article.back">Notizen von der Küste</span>
+        </a>
+        <span class="article-hero__label" data-lang="de"
+          >Geschichte &amp; Bedeutung</span
+        >
+        <span class="article-hero__label" data-lang="en" hidden
+          >Story &amp; Meaning</span
+        >
+        <h1 class="article-hero__title" data-lang="de">
+          Die ferne Küste: Die Geschichte hinter Far Shore
+        </h1>
+        <h1 class="article-hero__title" data-lang="en" hidden>
+          The Far Shore: The Story Behind the Name
+        </h1>
+        <div class="article-hero__divider" aria-hidden="true"></div>
+        <p class="article-hero__meta" data-lang="de">4 Min. Lesezeit</p>
+        <p class="article-hero__meta" data-lang="en" hidden>4 min read</p>
       </div>
+    </header>
 
-      <!-- ── ENGLISH ── -->
-      <div data-lang="en" hidden>
-        <p class="article-lead">
-          Some places appear on no map. You reach them not by a route, but by a breath.
-        </p>
+    <!-- FEATURE IMAGE -->
+    <img
+      class="article-image"
+      src="/images/journal/die-ferne-kueste/hero.jpg"
+      alt="Die ferne Küste — Dünen an der Küste Südchinas"
+    />
 
-        <p>
-          Far Shore is one of those places. Not a destination but a state: the quiet edge of the
-          day, where thought slows and the present is enough. To explain the name, we have to go
-          back almost a thousand years — to a poet who lost everything and found something in
-          the losing.
-        </p>
+    <!-- ARTICLE BODY -->
+    <main class="article-body" id="main-content">
+      <div class="article-body__inner">
+        <!-- ── GERMAN ── -->
+        <div data-lang="de">
+          <p class="article-lead">
+            Es gibt Orte, die auf keiner Karte stehen. Man erreicht sie nicht
+            über eine Route, sondern über einen Atemzug.
+          </p>
 
-        <h2>The poet at the edge of the world</h2>
+          <p>
+            Far Shore ist einer dieser Orte. Nicht Ziel, sondern Zustand: der
+            stille Rand des Tages, an dem die Gedanken langsamer werden und die
+            Gegenwart genügt. Um zu erklären, woher dieser Name kommt, müssen
+            wir fast tausend Jahre zurückgehen – zu einem Dichter, der alles
+            verlor und dabei etwas fand.
+          </p>
 
-        <img src="/images/journal/die-ferne-kueste/inline-1.jpg" alt="Illustration: a scholar looks out over the Hainan coastline, alongside the poem &ldquo;Not a place found on a map&rdquo;" style="aspect-ratio: 1400 / 781; width: 50%; margin-inline: auto;">
+          <h2>Der Dichter am Rand der Welt</h2>
 
-        <p>
-          Su Dongpo was among the greatest poets, painters and calligraphers of China's Song
-          dynasty. He was also inconvenient. His words won him admiration — and, again and
-          again, exile.
-        </p>
+          <img
+            class="journal-image"
+            src="/images/journal/die-ferne-kueste/inline-1.jpg"
+            alt="Illustration: ein Gelehrter blickt über die Küste Hainans, begleitet vom Gedicht &bdquo;Kein Ort auf einer Karte&ldquo;"
+            style="aspect-ratio: 1400 / 781"
+          />
 
-        <p>
-          The last exile took him, past the age of sixty, to the island of Hainan. To the court
-          in the capital, it was the edge of the known world: beyond the sea, beyond order,
-          beyond return. He arrived with little. A few books. An inkstone. His brush.
-        </p>
+          <p>
+            Su Dongpo war einer der größten Dichter, Maler und Kalligraphen der
+            chinesischen Song-Dynastie. Er war auch unbequem. Seine Worte
+            brachten ihm Bewunderung ein, und immer wieder die Verbannung.
+          </p>
 
-        <p>And he began to make incense.</p>
+          <p>
+            Die letzte führte ihn, schon über sechzig Jahre alt, auf die Insel
+            Hainan. Für den Hof in der Hauptstadt war das der Rand der bekannten
+            Welt: jenseits des Meeres, jenseits der Ordnung, jenseits jeder
+            Rückkehr. Er kam mit wenig an. Einige Bücher. Einen Tuschstein.
+            Seinen Pinsel.
+          </p>
 
-        <p>
-          Tradition holds that Su Dongpo blended his own incense from the island's woods and
-          resins, and wrote about fragrance as one writes about a friend. He needed no palace to
-          find stillness. Only a quiet morning, a thread of smoke, and the attention to follow
-          it.
-        </p>
+          <p>Und er begann, Räucherwerk herzustellen.</p>
 
-        <p>There, on the farthest shore of his life, he found what the court had never given him.</p>
+          <p>
+            Die Überlieferung erzählt, dass Su Dongpo aus den Hölzern und Harzen
+            der Insel eigene Mischungen formte und über den Duft schrieb wie
+            über einen Freund. Er brauchte keinen Palast, um zur Ruhe zu kommen.
+            Er brauchte nur einen stillen Morgen, einen faden Rauch und die
+            Aufmerksamkeit, ihm zu folgen.
+          </p>
 
-        <h2>The other shore</h2>
+          <p>
+            Dort, an der fernsten Küste seines Lebens, fand er, was ihm am Hof
+            gefehlt hatte.
+          </p>
 
-        <p>
-          East Asian Buddhist thought carries an image that holds this story: the other shore.
-          On this side of the sea lie restlessness, hurry, endless wanting. On the far side lies
-          clarity. You don't cross this sea by boat. You cross it with the mind.
-        </p>
+          <h2>Die andere Küste</h2>
 
-        <p>
-          Far Shore is our name for that other shore. Not an escape from the world, but a return
-          to yourself — for a good half hour, the time it takes one stick to burn.
-        </p>
+          <image
+            class="journal-image"
+            src="/images/journal/die-ferne-kueste/inline-3.jpg"
+            alt="Illustration: ein Gelehrter blickt über die Küste Hainans, begleitet vom Gedicht &bdquo;Kein Ort auf einer Karte&ldquo;"
+            style="aspect-ratio: 4 / 3"
 
-        <h2>Why smoke</h2>
+          <p>
+            In der buddhistischen Gedankenwelt Ostasiens gibt es ein Bild, das
+            diese Geschichte trägt: die andere Küste. Diesseits des Meeres
+            liegen Unruhe, Eile, das ständige Wollen. Jenseits davon liegt
+            Klarheit. Man überquert dieses Meer nicht mit einem Boot. Man
+            überquert es mit dem Geist.
+          </p>
 
-        <img src="/images/journal/die-ferne-kueste/inline-2.jpg" alt="A single Far Shore stick burning on a stone dish, a book beside it" style="aspect-ratio: 3 / 3; width: 50%; margin-inline: auto;">
+          <p>
+            Far Shore ist unser Name für diese andere Küste. Kein Rückzug aus
+            der Welt, sondern eine Rückkehr zu sich selbst – eine gute halbe
+            Stunde lang, so lange, wie ein Stäbchen brennt.
+          </p>
 
-        <p>
-          Smell is the only sense that bypasses the thalamus and reaches the limbic system
-          directly — the part of the brain where memory and emotion meet. That is why a scent
-          can carry us somewhere faster than any image.
-        </p>
+          <h2>Warum Rauch</h2>
 
-        <p>
-          In the temples, tea houses and scholars' studios of East Asia, incense was never
-          decoration. It was a signal: the ordinary pauses. Something else begins.
-        </p>
+          <img
+            class="journal-image"
+            src="/images/journal/die-ferne-kueste/inline-2.jpg"
+            alt="Ein einzelnes Far Shore Stäbchen brennt auf einem Steinteller, ein Buch daneben"
+            style="aspect-ratio: 4 / 3"
+          />
 
-        <h2>Wabi-sabi: the beauty of the imperfect</h2>
+          <p>
+            Der Geruchssinn ist der einzige Sinn, der ohne Umweg über den
+            Thalamus direkt das limbische System erreicht – jenen Teil des
+            Gehirns, der Erinnerung und Gefühl verbindet. Deshalb kann ein Duft
+            uns schneller an einen anderen Ort bringen als jedes Bild.
+          </p>
 
-        <p>
-          Su Dongpo's life in Hainan was far from perfect. That is where its power lies. The
-          Japanese aesthetic of wabi-sabi calls it the beauty of the unfinished, the impermanent,
-          the honest: crackled glaze, weathered wood, ash falling quietly.
-        </p>
+          <p>
+            In Tempeln, Teehäusern und Studierzimmern Ostasiens wurde
+            Räucherwerk nie als Dekoration verstanden. Es war ein Signal: Das
+            Gewöhnliche pausiert. Jetzt beginnt etwas anderes.
+          </p>
 
-        <p>
-          Every detail of Far Shore follows this thought. A stick with no core, which burns
-          entirely to ash. Scents named after landscapes rather than promises. Packaging made to
-          be kept, not thrown away.
-        </p>
+          <h2>Wabi-Sabi: die Schönheit des Unvollkommenen</h2>
 
-        <h2>Who Far Shore is for</h2>
+          <p>
+            Su Dongpos Leben auf Hainan war alles andere als perfekt. Gerade
+            darin liegt seine Kraft. Die japanische Ästhetik des Wabi-Sabi nennt
+            es die Schönheit des Unvollendeten, Vergänglichen, Ehrlichen:
+            rissige Glasur, verwittertes Holz, Asche, die zu Boden fällt.
+          </p>
 
-        <p>
-          For those who would rather find calm than perform it. For people who notice how an
-          object is made. Who prefers a room that is silent to one that speaks.
-        </p>
+          <p>
+            Jedes Detail von Far Shore folgt diesem Gedanken. Ein Stäbchen ohne
+            Kern, das vollständig zu Asche wird. Düfte, die nach Landschaften
+            benannt sind, statt nach Versprechen. Eine Verpackung, die
+            aufbewahrt statt weggeworfen wird.
+          </p>
 
-        <p>
-          You don't need to be exiled to an island to reach the far shore. You only need to
-          strike a match — and stay.
-        </p>
-      </div>
+          <h2>Für wen Far Shore ist</h2>
 
-      <div class="article-cta">
-        <p data-lang="de">Wie das Ritual beginnt, erfährst du hier.</p>
-        <p data-lang="en" hidden>See how the ritual begins.</p>
-        <div class="article-cta__actions">
-          <a class="article-btn article-btn--solid" href="/journal/far-shore-ritual/" data-lang="de">Wie man die Küste erreicht &rarr;</a>
-          <a class="article-btn article-btn--solid" href="/journal/far-shore-ritual/" data-lang="en" hidden>The Far Shore Ritual &rarr;</a>
+          <p>
+            Für alle, die Ruhe nicht inszenieren wollen, sondern finden. Für
+            Menschen, die bemerken, wie ein Gegenstand gemacht ist. Die einen
+            Raum lieber schweigen als sprechen hören.
+          </p>
+
+          <p>
+            Du musst nicht auf eine Insel verbannt werden, um die ferne Küste zu
+            erreichen. Du musst nur ein Streichholz anzünden – und bleiben.
+          </p>
+        </div>
+
+        <!-- ── ENGLISH ── -->
+        <div data-lang="en" hidden>
+          <p class="article-lead">
+            Some places appear on no map. You reach them not by a route, but by
+            a breath.
+          </p>
+
+          <p>
+            Far Shore is one of those places. Not a destination but a state: the
+            quiet edge of the day, where thought slows and the present is
+            enough. To explain the name, we have to go back almost a thousand
+            years — to a poet who lost everything and found something in the
+            losing.
+          </p>
+
+          <h2>The poet at the edge of the world</h2>
+
+          <img
+            class="journal-image"
+            src="/images/journal/die-ferne-kueste/inline-1.jpg"
+            alt="Illustration: a scholar looks out over the Hainan coastline, alongside the poem &ldquo;Not a place found on a map&rdquo;"
+            style="aspect-ratio: 1400 / 781"
+          />
+
+          <p>
+            Su Dongpo was among the greatest poets, painters and calligraphers
+            of China's Song dynasty. He was also inconvenient. His words won him
+            admiration — and, again and again, exile.
+          </p>
+
+          <p>
+            The last exile took him, past the age of sixty, to the island of
+            Hainan. To the court in the capital, it was the edge of the known
+            world: beyond the sea, beyond order, beyond return. He arrived with
+            little. A few books. An inkstone. His brush.
+          </p>
+
+          <p>And he began to make incense.</p>
+
+          <p>
+            Tradition holds that Su Dongpo blended his own incense from the
+            island's woods and resins, and wrote about fragrance as one writes
+            about a friend. He needed no palace to find stillness. Only a quiet
+            morning, a thread of smoke, and the attention to follow it.
+          </p>
+
+          <p>
+            There, on the farthest shore of his life, he found what the court
+            had never given him.
+          </p>
+
+          <h2>The other shore</h2>
+
+          <p>
+            East Asian Buddhist thought carries an image that holds this story:
+            the other shore. On this side of the sea lie restlessness, hurry,
+            endless wanting. On the far side lies clarity. You don't cross this
+            sea by boat. You cross it with the mind.
+          </p>
+
+          <p>
+            Far Shore is our name for that other shore. Not an escape from the
+            world, but a return to yourself — for a good half hour, the time it
+            takes one stick to burn.
+          </p>
+
+          <h2>Why smoke</h2>
+
+          <img
+            class="journal-image"
+            src="/images/journal/die-ferne-kueste/inline-2.jpg"
+            alt="A single Far Shore stick burning on a stone dish, a book beside it"
+            style="aspect-ratio: 4 / 3"
+          />
+
+          <p>
+            Smell is the only sense that bypasses the thalamus and reaches the
+            limbic system directly — the part of the brain where memory and
+            emotion meet. That is why a scent can carry us somewhere faster than
+            any image.
+          </p>
+
+          <p>
+            In the temples, tea houses and scholars' studios of East Asia,
+            incense was never decoration. It was a signal: the ordinary pauses.
+            Something else begins.
+          </p>
+
+          <h2>Wabi-sabi: the beauty of the imperfect</h2>
+
+          <p>
+            Su Dongpo's life in Hainan was far from perfect. That is where its
+            power lies. The Japanese aesthetic of wabi-sabi calls it the beauty
+            of the unfinished, the impermanent, the honest: crackled glaze,
+            weathered wood, ash falling quietly.
+          </p>
+
+          <p>
+            Every detail of Far Shore follows this thought. A stick with no
+            core, which burns entirely to ash. Scents named after landscapes
+            rather than promises. Packaging made to be kept, not thrown away.
+          </p>
+
+          <h2>Who Far Shore is for</h2>
+
+          <p>
+            For those who would rather find calm than perform it. For people who
+            notice how an object is made. Who prefers a room that is silent to
+            one that speaks.
+          </p>
+
+          <p>
+            You don't need to be exiled to an island to reach the far shore. You
+            only need to strike a match — and stay.
+          </p>
+        </div>
+
+        <div class="article-cta">
+          <p data-lang="de">Wie das Ritual beginnt, erfährst du hier.</p>
+          <p data-lang="en" hidden>See how the ritual begins.</p>
+          <div class="article-cta__actions">
+            <a
+              class="article-btn article-btn--solid"
+              href="/journal/far-shore-ritual/"
+              data-lang="de"
+              >Wie man die Küste erreicht &rarr;</a
+            >
+            <a
+              class="article-btn article-btn--solid"
+              href="/journal/far-shore-ritual/"
+              data-lang="en"
+              hidden
+              >The Far Shore Ritual &rarr;</a
+            >
+          </div>
         </div>
       </div>
+    </main>
 
-    </div>
-  </main>
+    <!-- MORE FROM THE JOURNAL -->
+    <section class="article-more" aria-label="More from the journal">
+      <div class="article-more__inner">
+        <h2 class="article-more__heading" data-i18n="article.more">
+          Weiterlesen
+        </h2>
+        <div class="article-more__grid">
+          <a href="/journal/far-shore-ritual/" class="article-more__card">
+            <img
+              class="article-more__card-image"
+              src="/images/journal/far-shore-ritual/hero.jpg"
+              alt="Das Far Shore Ritual"
+            />
+            <div class="article-more__card-body">
+              <h3 class="article-more__card-title" data-lang="de">
+                Das Far Shore Ritual
+              </h3>
+              <h3 class="article-more__card-title" data-lang="en" hidden>
+                The Far Shore Ritual
+              </h3>
+              <span
+                class="article-more__card-link"
+                data-i18n="article.read_more"
+                >Mehr lesen &rarr;</span
+              >
+            </div>
+          </a>
 
-
-  <!-- MORE FROM THE JOURNAL -->
-  <section class="article-more" aria-label="More from the journal">
-    <div class="article-more__inner">
-      <h2 class="article-more__heading" data-i18n="article.more">Weiterlesen</h2>
-      <div class="article-more__grid">
-
-        <a href="/journal/far-shore-ritual/" class="article-more__card">
-          <img class="article-more__card-image" src="/images/journal/far-shore-ritual/hero.jpg" alt="Das Far Shore Ritual">
-          <div class="article-more__card-body">
-            <h3 class="article-more__card-title" data-lang="de">Das Far Shore Ritual</h3>
-            <h3 class="article-more__card-title" data-lang="en" hidden>The Far Shore Ritual</h3>
-            <span class="article-more__card-link" data-i18n="article.read_more">Mehr lesen &rarr;</span>
-          </div>
-        </a>
-
-        <a href="/journal/kernloses-raeucherwerk/" class="article-more__card">
-          <img class="article-more__card-image" src="/images/journal/kernloses-raeucherwerk/inline-1.jpg" alt="Kernlos. Botanisch.">
-          <div class="article-more__card-body">
-            <h3 class="article-more__card-title" data-lang="de">Kernlos. Botanisch.</h3>
-            <h3 class="article-more__card-title" data-lang="en" hidden>Coreless. Botanical.</h3>
-            <span class="article-more__card-link" data-i18n="article.read_more">Mehr lesen &rarr;</span>
-          </div>
-        </a>
-
+          <a href="/journal/kernloses-raeucherwerk/" class="article-more__card">
+            <img
+              class="article-more__card-image"
+              src="/images/journal/kernloses-raeucherwerk/inline-1.jpg"
+              alt="Kernlos. Botanisch."
+            />
+            <div class="article-more__card-body">
+              <h3 class="article-more__card-title" data-lang="de">
+                Kernlos. Botanisch.
+              </h3>
+              <h3 class="article-more__card-title" data-lang="en" hidden>
+                Coreless. Botanical.
+              </h3>
+              <span
+                class="article-more__card-link"
+                data-i18n="article.read_more"
+                >Mehr lesen &rarr;</span
+              >
+            </div>
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- FOOTER -->
+    <footer class="site-footer" id="footer" role="contentinfo">
+      <div class="site-footer__inner">
+        <div class="site-footer__wordmark">
+          <img
+            src="/images/logo/logo_vertical.png"
+            alt="Far Shore"
+            class="site-footer__logo"
+          />
+        </div>
+        <div class="site-footer__socials" aria-label="Social media links">
+          <a href="#" class="site-footer__social-link" aria-label="Instagram">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle
+                cx="17.5"
+                cy="6.5"
+                r="0.5"
+                fill="currentColor"
+                stroke="none"
+              />
+            </svg>
+          </a>
+          <a href="#" class="site-footer__social-link" aria-label="Pinterest">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.03-2.83.19-.76 1.26-5.33 1.26-5.33s-.32-.64-.32-1.59c0-1.49.86-2.6 1.94-2.6.91 0 1.35.68 1.35 1.5 0 .92-.58 2.29-.88 3.56-.25 1.06.53 1.93 1.57 1.93 1.88 0 3.14-2.4 3.14-5.24 0-2.16-1.46-3.68-3.55-3.68-2.42 0-3.84 1.82-3.84 3.7 0 .73.28 1.51.63 1.94.07.08.08.15.06.23-.06.27-.21.85-.24.97-.04.16-.13.19-.3.12-1.13-.53-1.84-2.18-1.84-3.51 0-2.85 2.07-5.47 5.97-5.47 3.13 0 5.57 2.23 5.57 5.21 0 3.11-1.96 5.61-4.67 5.61-.91 0-1.77-.47-2.06-1.03l-.56 2.09c-.2.78-.75 1.75-1.12 2.34.84.26 1.73.4 2.65.4 5.52 0 10-4.48 10-10S17.52 2 12 2z"
+              />
+            </svg>
+          </a>
+        </div>
+        <div class="site-footer__divider"></div>
+        <div class="site-footer__newsletter">
+          <p
+            class="site-footer__newsletter-label"
+            data-i18n="footer.newsletter.label"
+          >
+            Bleibe in Kontakt.
+          </p>
+          <form
+            class="site-footer__newsletter-form"
+            action="#"
+            method="post"
+            novalidate
+          >
+            <input
+              class="site-footer__newsletter-input"
+              type="email"
+              name="email"
+              data-i18n-placeholder="footer.newsletter.placeholder"
+              placeholder="Deine E-Mail-Adresse"
+              aria-label="E-Mail-Adresse"
+              required
+            />
+            <button
+              class="site-footer__newsletter-btn"
+              type="submit"
+              data-i18n="footer.newsletter.btn"
+            >
+              Abonnieren
+            </button>
+          </form>
+        </div>
+        <div class="site-footer__divider"></div>
+        <p class="site-footer__legal" data-i18n="footer.legal">
+          &copy; 2025 Far Shore. Alle Rechte vorbehalten.
+        </p>
+      </div>
+    </footer>
 
-  <!-- FOOTER -->
-  <footer class="site-footer" id="footer" role="contentinfo">
-    <div class="site-footer__inner">
-      <div class="site-footer__wordmark">
-        <img src="/images/logo/logo_vertical.png" alt="Far Shore" class="site-footer__logo">
-      </div>
-      <div class="site-footer__socials" aria-label="Social media links">
-        <a href="#" class="site-footer__social-link" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-            <circle cx="12" cy="12" r="4"/>
-            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
-          </svg>
-        </a>
-        <a href="#" class="site-footer__social-link" aria-label="Pinterest">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.03-2.83.19-.76 1.26-5.33 1.26-5.33s-.32-.64-.32-1.59c0-1.49.86-2.6 1.94-2.6.91 0 1.35.68 1.35 1.5 0 .92-.58 2.29-.88 3.56-.25 1.06.53 1.93 1.57 1.93 1.88 0 3.14-2.4 3.14-5.24 0-2.16-1.46-3.68-3.55-3.68-2.42 0-3.84 1.82-3.84 3.7 0 .73.28 1.51.63 1.94.07.08.08.15.06.23-.06.27-.21.85-.24.97-.04.16-.13.19-.3.12-1.13-.53-1.84-2.18-1.84-3.51 0-2.85 2.07-5.47 5.97-5.47 3.13 0 5.57 2.23 5.57 5.21 0 3.11-1.96 5.61-4.67 5.61-.91 0-1.77-.47-2.06-1.03l-.56 2.09c-.2.78-.75 1.75-1.12 2.34.84.26 1.73.4 2.65.4 5.52 0 10-4.48 10-10S17.52 2 12 2z"/>
-          </svg>
-        </a>
-      </div>
-      <div class="site-footer__divider"></div>
-      <div class="site-footer__newsletter">
-        <p class="site-footer__newsletter-label" data-i18n="footer.newsletter.label">Bleibe in Kontakt.</p>
-        <form class="site-footer__newsletter-form" action="#" method="post" novalidate>
-          <input class="site-footer__newsletter-input" type="email" name="email"
-            data-i18n-placeholder="footer.newsletter.placeholder"
-            placeholder="Deine E-Mail-Adresse" aria-label="E-Mail-Adresse" required>
-          <button class="site-footer__newsletter-btn" type="submit" data-i18n="footer.newsletter.btn">Abonnieren</button>
-        </form>
-      </div>
-      <div class="site-footer__divider"></div>
-      <p class="site-footer__legal" data-i18n="footer.legal">&copy; 2025 Far Shore. Alle Rechte vorbehalten.</p>
-    </div>
-  </footer>
-
-  <script type="module" src="/js/i18n.js"></script>
-  <script type="module" src="/js/nav.js"></script>
-  <script type="module" src="/js/scroll-reveal.js"></script>
-</body>
+    <script type="module" src="/js/i18n.js"></script>
+    <script type="module" src="/js/nav.js"></script>
+    <script type="module" src="/js/scroll-reveal.js"></script>
+  </body>
 </html>
